@@ -1,5 +1,7 @@
 # Data Types
 
+Stage: 1 - Proposal
+
 Postman Flows in its heart is a dataflow language, which means that there flows
 understands all kinds of values and associates a type to data. It should also be
 noted that Flows in a hybrid typed language, which means that it perform static 
