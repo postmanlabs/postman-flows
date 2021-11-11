@@ -79,3 +79,13 @@ A *regex* value gets automatically converted to a *string* if required.
 
 ### Range (Pre-Proposal) - TBD
 *Note: Ranges are still in pre-proposal stage and might not be implemented*
+
+## Complex Types
+
+### List
+
+### Tuple
+
+### Record
+
+### Map
