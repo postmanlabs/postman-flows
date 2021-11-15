@@ -43,7 +43,7 @@ Name |Stability| What can you do with it? | Added
 ### Start
 Stage: Experimental
 
-The *Start* block is one of the primitive trigger blocks. It can be used to generate an event with a [Record](data-types.md#Record) containing the timestamp of when it was trigger.
+The *Start* block is one of the primitive trigger blocks. It can be used to generate an event with a [Record](data-types.md#Record) containing the timestamp of when it was triggered.
 > When a new flow is created it comes with a Start block pre-created which in most cases will be the starting point for the flow.
 
 | Port (`symbol`) | Type | Description |
