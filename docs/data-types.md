@@ -79,3 +79,60 @@ A *regex* value gets automatically converted to a *string* if required.
 
 ### Range (Pre-Proposal) - TBD
 *Note: Ranges are still in pre-proposal stage and might not be implemented*
+
+## Abstract Types
+
+> All complex/abstract data-types in Flows are built over the concept of [Streams](https://en.wikipedia.org/wiki/Stream_(computing)) internally.
+
+### List
+The list data-type represents a stream of ordered values, where values of the same type
+may occur more than once. You might be familiar with Arrays in javascript, Lists are like
+arrays but with the constraint that all elements present in the list are of same type.
+
+A typescript equivalent of List would be
+```ts
+const list : number[] = [1, 2, 3, 4, 5];
+```
+*A stream of values where all values have the same type*
+
+### Tuple
+The tuple data-type represent an ordered sequence of finite elements. The values for each
+element of the tuple can be of different type. Unlike Lists, tuples cannot be an infinite stream,
+they are of fixed size and their size must be known before hand.
+
+A typescript equivalent of Tuple would be
+```ts
+const list : [string, number, boolean] = ['flows', 20, true];
+```
+
+*A fixed stream of values where values have same or different types*
+
+### Record
+A record is a collection of fields(key-value pair) where the key is of string type and the values
+can be of different types. These field are fixed in number and follow a particular sequence. If you have some knowledge of C, you will know these are `struct`. 
+
+A typescript equivalent of Record would be
+```ts
+interface Box {
+  name: string;
+  length: number;
+  width: number;
+  height: number;
+  empty: boolean
+}
+```
+
+*A stream of fields(key:value) where key is string and values have same or different types*
+
+### Map / Dictionary
+
+A map is a collection of fields where the key can be a value of a primitive type and 
+corresponding value can be of any data-type. The constraint here being that all fields 
+must have keys and values of same type.
+
+A typescript equivalent of Map would be
+```ts
+type map: {[key: string]: number} = {'a': 1, 'b': 2, 'c': 3};
+```
+
+*A stream of fields(key:value) where keys are of same type and values are of same type*
