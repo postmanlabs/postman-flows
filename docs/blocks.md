@@ -266,7 +266,7 @@ The *Condition* block lets you write expressions with the new [Expression input]
 ---
 
 ### Check
-The *Check* block accepts input fro 2 sources and lets you write expressions with the new [Expression input](https://github.com/postmanlabs/postman-flows/discussions/124). If the condition resolves to `True` it passes the data through otherwise burns the data away.
+The *Check* block accepts input from 2 sources and lets you write expressions with the new [Expression input](https://github.com/postmanlabs/postman-flows/discussions/124). If the condition resolves to `True` it passes the data through otherwise burns the data away.
 
 | Port (`symbol`) | Type | Description |
 | --- | --- | --- |
