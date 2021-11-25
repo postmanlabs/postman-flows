@@ -37,6 +37,8 @@ Name |Stability| What can you do with it? | Added
 [Group By](#Group-By) | Experimental |Groups an array based on a specified key 
 [Parse JSON](#Parse-JSON) | Experimental |Parses the incoming data to JSON | 21.09.1
 [Concatenate](#Concatenate) | Experimental | Take 2 data pieces and put them in a single array list
+[Condition] | Experimental | Checks for the given condition and passes data to either "Accept" or "Reject" port
+[Check] | Experimental | Check for the given condition from 2 different inputs and pass data only if condition resolves to `True`
 
 
 ## Reference
@@ -249,5 +251,27 @@ The *Parse JSON* block can be used to parse any JSON string and create a flow da
 | --- | --- | --- |
 | Data (`data`) | `input` | Accepts data containing a json string |
 | JSON (`json`) | `output` | Emits a parsed data packet of JSON string |
+
+---
+
+### Condition
+The *Condition* block lets you write expressions with the new [Expression input](https://github.com/postmanlabs/postman-flows/discussions/124). If the condition resolves to `True` it passes the data through the "Accept" port, and if the expression resolves to `False` it passes the data through "Reject" port
+
+| Port (`symbol`) | Type | Description |
+| --- | --- | --- |
+| Data (`data`) | `input` | Accepts data on which decision is to be made |
+| Accept (`Accept`) | `output` | Passes data received if the condition resolves to `True` |
+| Reject (`Reject`) | `output` | Passes data received if the condition resolves to `False` |
+
+---
+
+### Check
+The *Check* block accepts input fro 2 sources and lets you write expressions with the new [Expression input](https://github.com/postmanlabs/postman-flows/discussions/124). If the condition resolves to `True` it passes the data through otherwise burns the data away.
+
+| Port (`symbol`) | Type | Description |
+| --- | --- | --- |
+| Primary (`Primary`) | `input` | Data which needs to pass through if condition resolves to `True` |
+| Secondary (`Secondary`) | `input` | Other source of data which does not pass through |
+| Primary (`Primary`) | `output` | Passes data received from `Primary` input port if the condition resolves to `True`|
 
 ---
