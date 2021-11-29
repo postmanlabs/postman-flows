@@ -2,7 +2,7 @@
 
 A block is a small actor/process that perform some predefine action. Flows comes in-built with some predefined blocks. A block starts executing when it has some data in all of it's input ports.
 
-> This page is maintained as a source of truth for all the blocks that are available within Flows. Uses the ideas section of discussion to suggest any modifications in behavior to the existing blocks or any ideas for new blocks. 
+> This page is maintained as a source of truth for all the blocks that are available within Flows. Use the ideas section of discussion to suggest any modifications in behavior to the existing blocks or any ideas for new blocks. 
 
 
 ## Stability
@@ -10,14 +10,13 @@ The block is an living standard and blocks go through a life-cycle as mentioned 
 
 1. **Proposed** - This is proposed block that has not been implemented yet.
 
-2. **Experimental** - This is a block that has been implement, but the API is not stable yet and may change in before becoming stable. 
+2. **Experimental** - This is a block that has been implement, but the API is not stable yet and may change before becoming stable. 
 
-3. **Standard** - This a block who API's have been frozen and not changes would be made.
+3. **Standard** - This a block who API's have been frozen and no changes would be made.
 
 4. **Deprecated** - This is a block which is no longer maintained or there is a newer better alternative block available as a replacement.
 
-5. **Removed** - This is a block that once existed but is longer is available to
-be used.
+5. **Removed** - This is a block that once existed but is longer is available to be used.
 
 ## List
 
