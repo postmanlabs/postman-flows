@@ -31,7 +31,7 @@ Name |Stability| What can you do with it? | Added | Last updated
 [Merge](#Merge) | Experimental |Takes 2 objects and merges them into a single object 
 [List Pop](#List-Pop) | Experimental | Get element at index 0 of an array 
 [Group By](#Group-By) | Experimental | Groups an array based on a specified key 
-[Parse JSON](#Parse-JSON) | Experimental |Parses the incoming data to JSON | 21.09.1
+[Parse JSON](#Parse-JSON) | Removed |Parses the incoming data to JSON | 21.09.1
 [Concatenate](#Concatenate) | Experimental | Take 2 data pieces and put them in a single array list
 [Condition](#Condition) | Experimental | Checks for the given condition and passes data to either "Accept" or "Reject" port | 21.11.1
 [Check](#Check) | Experimental | Check for the given condition from 2 different inputs and pass data only if condition resolves to `True` | 21.11.1
