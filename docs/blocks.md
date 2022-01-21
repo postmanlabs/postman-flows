@@ -25,19 +25,20 @@ Name |Stability| What can you do with it? | Added
 [Start](#Start) | Experimental | Starts the flow program | 21.09.1
 [Send Request](#Send-Request) | Experimental | Executes the selected request | 21.09.1
 [Terminal](#Terminal)| Experimental | Displays data that is incoming to the block | 21.09.1
-[Assign Variables](#Assign-Variable)| Experimental | Assign strings to template variables
-[Create Variable](#Create-Variable) | Experimental | Assign data from reference to template variables
 [Delay](#Delay) | Experimental |Adds a delay | 21.09.1
 [Test Summary](#Test-Summary) | Experimental | Fetches test summary of the request and displays it in terminal fashion
-[Validate](#Validate)| Experimental | Checks if the query matches certain data or not | 21.09.1
 [For Each](#For-Each) | Experimental | Iterate over list | 21.09.1
 [Merge](#Merge) | Experimental |Takes 2 objects and merges them into a single object 
 [List Pop](#List-Pop) | Experimental | Get element at index 0 of an array 
-[Group By](#Group-By) | Experimental |Groups an array based on a specified key 
+[Group By](#Group-By) | Experimental | Groups an array based on a specified key 
 [Parse JSON](#Parse-JSON) | Experimental |Parses the incoming data to JSON | 21.09.1
 [Concatenate](#Concatenate) | Experimental | Take 2 data pieces and put them in a single array list
 [Condition](#Condition) | Experimental | Checks for the given condition and passes data to either "Accept" or "Reject" port
 [Check](#Check) | Experimental | Check for the given condition from 2 different inputs and pass data only if condition resolves to `True`
+[Create Durables](#Create-Durables) | Experimental | Set some value to be made durable | 21.12.2
+[Assign Variables](#Assign-Variable)| Deprecated | Use Send Request's configuration to pass data to request variables
+[Create Variable](#Create-Variable) | Deprecated | Use Send Request's configuration to pass data to request variables
+[Validate](#Validate)| Deprecated | Use 'Condition' block to conditionally pass data to the next block | 21.09.1
 
 
 ## Reference
@@ -272,5 +273,15 @@ The *Check* block accepts input from 2 sources and lets you write expressions wi
 | Primary (`Primary`) | `input` | Data which needs to pass through if condition resolves to `True` |
 | Secondary (`Secondary`) | `input` | Other source of data which does not pass through |
 | Primary (`Primary`) | `output` | Passes data received from `Primary` input port if the condition resolves to `True`|
+
+---
+
+### Create Durables
+The *Create Durables* allows bool, number, string and timestamp to be made durable, durables or durable data is the data that can persists across mutiple connected blocks.
+
+| Port (`symbol`) | Type | Description |
+| --- | --- | --- |
+| Data (`Data`) | `input` | Accepts the data who's values can be assigned to durables |
+| Data (`Data`) | `output` | Passes newly created durables and the data received from `Data` input port |
 
 ---
