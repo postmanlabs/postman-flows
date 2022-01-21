@@ -36,6 +36,7 @@ Name |Stability| What can you do with it? | Added | Last updated
 [Condition](#Condition) | Experimental | Checks for the given condition and passes data to either "Accept" or "Reject" port | 21.11.1
 [Check](#Check) | Experimental | Check for the given condition from 2 different inputs and pass data only if condition resolves to `True` | 21.11.1
 [Create Durables](#Create-Durables) | Experimental | Set some value to be made durable | 21.12.2 | 21.12.2
+[Create Data] (#Create-Data) | Experimental | Create complex data structures | 22.01.1 | 22.01.1
 [Assign Variables](#Assign-Variable)| Deprecated | Use Send Request's configuration to pass data to request variables |  | 21.12.2
 [Create Variable](#Create-Variable) | Deprecated | Use Send Request's configuration to pass data to request variables |  | 21.12.2
 [Validate](#Validate)| Deprecated | Use 'Condition' block to conditionally pass data to the next block | 21.09.1 | 21.11.1
@@ -244,14 +245,27 @@ The *Create Durables* allows bool, number, string and timestamp values to be mad
 
 | Port (`symbol`) | Type | Description |
 | --- | --- | --- |
-| Data (`Data`) | `input` | Accepts the data who's values can be assigned to durables |
-| Data (`Data`) | `output` | Passes newly created durables and the data received from `Data` input port |
+| Data (`Data`) | `input` | Accepts the data whose values can be assigned to durables |
+| Data (`Data`) | `output` | Provides newly created durables and the data received from `Data` input port |
 
 ---
+
+### Create Data
+Stage: Experimental
+
+The *Create Data* is used for creating complex data structure Tuples, Records, Lists and Maps.
+
+| Port (`symbol`) | Type | Description |
+| --- | --- | --- |
+| Data (`Data`) | `input` | Accepts the data whose values are used to create a complex data structure |
+| Data (`Data`) | `output` | Provides the complex data structure |
+
+---
+
 ### Assign Variable
 Stage: Deprecated
 
-> Warning: This block has been marked to removed in the future versions. Working with variables will be restricted to the Send Request block.
+> Warning: Use Send Request's configuration to pass data to request variables. This block has been marked to removed in the future versions. Working with variables will be restricted to the Send Request block.
 
 The *assign variable* can be used to take any type of input data and convert it to a `Map` containing strings as values, that can be used as a data-variable. The assign variable block is not capable of defining constant string values. If string values are needed the [Create Variable](#Create-Variable) block can be used in conjunction with the [Merge](#Merge) block. 
 
@@ -266,7 +280,7 @@ The *assign variable* can be used to take any type of input data and convert it 
 ### Create Variable
 Stage: Deprecated
 
-> Warning: This block has been marked to removed in the future versions. Working with variables will be restricted to the Send Request block.
+> Warning: Use Send Request's configuration to pass data to request variables. This block has been marked to removed in the future versions. Working with variables will be restricted to the Send Request block.
 
 The *create variable* block can be used define a `Map` containing constant string values. 
 
@@ -281,7 +295,7 @@ The *create variable* block can be used define a `Map` containing constant strin
 ### Validate
 Stage: Deprecated
 
-> Warning: This block has been marked to removed in the future versions. This will be replace by a more versatile Check block.
+> Warning: Use 'Condition' block to conditionally pass data to the next block. This block has been marked to removed in the future versions. This will be replace by a more versatile Check block.
 
 The *Validate* block is a conditional flow control block that routes a data packet to either the `true` port or `false` port based on condition. This block uses some information present within the data itself to perform the validation check.
 
