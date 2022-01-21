@@ -103,35 +103,6 @@ The *Terminal* block can be used to print the data emitted by any port to the te
 | Data (`data`) | `input` | Accepts any type of data |
 
 ---
-### Assign Variable
-Stage: Experimental
-> Warning: This block has been marked to removed in the future versions. Working with variables will be restricted to the Send Request block.
-
-The *assign variable* can be used to take any type of input data and convert it to a `Map` containing strings as values, that can be used as a data-variable. The assign variable block is not capable of defining constant string values. If string values are needed the [Create Variable](#Create-Variable) block can be used in conjunction with the [Merge](#Merge) block. 
-
-> Note: Nested records are not supported, the values of the records can only be strings or values that can be casted to a string.
-
-| Port (`symbol`) | Type | Description |
-| --- | --- | --- |
-| Data (`data`) | `input` | Accepts any type of data |
-| Variables (`variables`) | `output` | Emits a `Map<string, string>` which can be used to generate variables in a *Send Request* block |
-
----
-### Create Variable
-Stage: Experimental
-
-> Warning: This block has been marked to removed in the future versions. Working with variables will be restricted to the Send Request block.
-
-The *create variable* block can be used define a `Map` containing constant string values. 
-
-> Note: Nested records are not supported, the values of the records can only be strings or values that can be casted to a string.
-
-| Port (`symbol`) | Type | Description |
-| --- | --- | --- |
-| Trigger (`trigger`) | `input` | Accepts any type of data to trigger the creation |
-| Variables (`variables`) | `output` | Emits a `Map<string, string>` which can be used to generate variables in a *Send Request* block |
-
----
 ### Delay
 Stage: Experimental
 
@@ -152,20 +123,6 @@ The summary of all the assertions can be seen in the *Test Summary* panel.
 | Port (`symbol`) | Type | Description |
 | --- | --- | --- |
 | Test (`test`) | `input` | Accepts a [Test List](#Test-List-Schema) |
-
----
-### Validate
-Stage: Experimental
-
-> Warning: This block has been marked to removed in the future versions. This will be replace by a more versatile Check block.
-
-The *Validate* block is a conditional flow control block that routes a data packet to either the `true` port or `false` port based on condition. This block uses some information present within the data itself to perform the validation check.
-
-| Port (`symbol`) | Type | Description |
-| --- | --- | --- |
-| Data (`data`)  | `input`  | Accepts any type of data. |
-| True (`true`) | `output` | Emits the accepted data if the validation passes. |
-| False (`false`) | `output` | Emits the accepted data if the validation fails. |
 
 ---
 ### For Each
@@ -255,6 +212,8 @@ The *Parse JSON* block can be used to parse any JSON string and create a flow da
 ---
 
 ### Condition
+Stage: Experimental
+
 The *Condition* block lets you write expressions with the new [Expression input](https://github.com/postmanlabs/postman-flows/discussions/124). If the condition resolves to `True` it passes the data through the "Accept" port, and if the expression resolves to `False` it passes the data through "Reject" port
 
 | Port (`symbol`) | Type | Description |
@@ -266,6 +225,8 @@ The *Condition* block lets you write expressions with the new [Expression input]
 ---
 
 ### Check
+Stage: Experimental
+
 The *Check* block accepts input from 2 sources and lets you write expressions with the new [Expression input](https://github.com/postmanlabs/postman-flows/discussions/124). If the condition resolves to `True` it passes the data through otherwise burns the data away.
 
 | Port (`symbol`) | Type | Description |
@@ -277,11 +238,57 @@ The *Check* block accepts input from 2 sources and lets you write expressions wi
 ---
 
 ### Create Durables
+Stage: Experimental
+
 The *Create Durables* allows bool, number, string and timestamp to be made durable, durables or durable data is the data that can persists across mutiple connected blocks.
 
 | Port (`symbol`) | Type | Description |
 | --- | --- | --- |
 | Data (`Data`) | `input` | Accepts the data who's values can be assigned to durables |
 | Data (`Data`) | `output` | Passes newly created durables and the data received from `Data` input port |
+
+---
+### Assign Variable
+Stage: Deprecated
+
+> Warning: This block has been marked to removed in the future versions. Working with variables will be restricted to the Send Request block.
+
+The *assign variable* can be used to take any type of input data and convert it to a `Map` containing strings as values, that can be used as a data-variable. The assign variable block is not capable of defining constant string values. If string values are needed the [Create Variable](#Create-Variable) block can be used in conjunction with the [Merge](#Merge) block. 
+
+> Note: Nested records are not supported, the values of the records can only be strings or values that can be casted to a string.
+
+| Port (`symbol`) | Type | Description |
+| --- | --- | --- |
+| Data (`data`) | `input` | Accepts any type of data |
+| Variables (`variables`) | `output` | Emits a `Map<string, string>` which can be used to generate variables in a *Send Request* block |
+
+---
+### Create Variable
+Stage: Deprecated
+
+> Warning: This block has been marked to removed in the future versions. Working with variables will be restricted to the Send Request block.
+
+The *create variable* block can be used define a `Map` containing constant string values. 
+
+> Note: Nested records are not supported, the values of the records can only be strings or values that can be casted to a string.
+
+| Port (`symbol`) | Type | Description |
+| --- | --- | --- |
+| Trigger (`trigger`) | `input` | Accepts any type of data to trigger the creation |
+| Variables (`variables`) | `output` | Emits a `Map<string, string>` which can be used to generate variables in a *Send Request* block |
+
+---
+### Validate
+Stage: Deprecated
+
+> Warning: This block has been marked to removed in the future versions. This will be replace by a more versatile Check block.
+
+The *Validate* block is a conditional flow control block that routes a data packet to either the `true` port or `false` port based on condition. This block uses some information present within the data itself to perform the validation check.
+
+| Port (`symbol`) | Type | Description |
+| --- | --- | --- |
+| Data (`data`)  | `input`  | Accepts any type of data. |
+| True (`true`) | `output` | Emits the accepted data if the validation passes. |
+| False (`false`) | `output` | Emits the accepted data if the validation fails. |
 
 ---
