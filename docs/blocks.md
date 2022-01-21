@@ -20,31 +20,40 @@ The block is an living standard and blocks go through a life-cycle as mentioned 
 
 ## List
 
-Name |Stability| What can you do with it? | Added | Last updated
--- | -- | -- | -- | -- |
+Name |Stability| What can you do with it? | Added
+-- | -- | -- | -- |
 [Start](#Start) | Experimental | Starts the flow program | 21.09.1
 [Send Request](#Send-Request) | Experimental | Executes the selected request | 21.09.1
 [Terminal](#Terminal)| Experimental | Displays data that is incoming to the block | 21.09.1
 [Delay](#Delay) | Experimental |Adds a delay | 21.09.1
-[Test Summary](#Test-Summary) | Experimental | Fetches test summary of the request and displays it in terminal fashion
+[Test Summary](#Test-Summary) | Experimental | Fetches test summary of the request and displays it in terminal fashion | 21.10.1
 [For Each](#For-Each) | Experimental | Iterate over list | 21.09.1
-[Merge](#Merge) | Experimental |Takes 2 objects and merges them into a single object 
-[List Pop](#List-Pop) | Experimental | Get element at index 0 of an array 
-[Group By](#Group-By) | Experimental | Groups an array based on a specified key 
+[Merge](#Merge) | Experimental |Takes 2 objects and merges them into a single object | 21.10.2
+[List Pop](#List-Pop) | Experimental | Get element at index 0 of an array | 21.10.4
+[Group By](#Group-By) | Experimental | Groups an array based on a specified key | 21.10.4
 [Parse JSON](#Parse-JSON) | Removed | Use Send Request block configuration to force parse response bodies to JSON | 21.09.1
-[Concatenate](#Concatenate) | Experimental | Take 2 data pieces and put them in a single array list
+[Concatenate](#Concatenate) | Experimental | Take 2 data pieces and put them in a single array list | 21.09.1
 [Condition](#Condition) | Experimental | Checks for the given condition and passes data to either "Accept" or "Reject" port | 21.11.1
 [Check](#Check) | Experimental | Check for the given condition from 2 different inputs and pass data only if condition resolves to `True` | 21.11.1
-[Create Durables](#Create-Durables) | Experimental | Set some value to be made durable | 21.12.2 | 21.12.2
-[Create Data](#Create-Data) | Experimental | Create complex data structures | 22.01.1 | 22.01.1
-[Assign Variables](#Assign-Variable)| Deprecated | Use Send Request's configuration to pass data to request variables |  | 21.12.2
-[Create Variable](#Create-Variable) | Deprecated | Use Send Request's configuration to pass data to request variables |  | 21.12.2
-[Validate](#Validate)| Deprecated | Use 'Condition' block to conditionally pass data to the next block | 21.09.1 | 21.11.1
+[Create Durables](#Create-Durables) | Experimental | Set some value to be made durable | 21.12.2
+[Create Data](#Create-Data) | Experimental | Create complex data structures | 22.01.1
+[Assign Variables](#Assign-Variable)| Deprecated | Use Send Request's configuration to pass data to request variables | 21.10.3
+[Create Variable](#Create-Variable) | Deprecated | Use Send Request's configuration to pass data to request variables | 21.09.1
+[Validate](#Validate)| Deprecated | Use 'Condition' block to conditionally pass data to the next block | 21.09.1
 
 
 ## Reference
 ### Start
 Stage: Experimental
+
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.09.1 | Created
+</details>
 
 The *Start* block is one of the primitive trigger blocks. It can be used to generate an event with a [Record](data-types.md#Record) containing the timestamp of when it was triggered.
 > When a new flow is created it comes with a Start block pre-created which in most cases will be the starting point for the flow.
@@ -56,6 +65,15 @@ The *Start* block is one of the primitive trigger blocks. It can be used to gene
 ---
 ### Send Request
 Stage: Experimental
+
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.09.1 | Created
+</details>
 
 The `Send Request` block can be used to send one of the requests defined in a collection inside the current workspace.
 This is block optionally accept a Record in its variable port and uses it to generate data-variable to satisfy the variables used within the selected Request.
@@ -97,6 +115,15 @@ test: List
 ### Terminal
 Stage: Experimental
 
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.09.1 | Created
+</details>
+
 The *Terminal* block can be used to print the data emitted by any port to the terminal panel. This is similar to using `console.log` in javascript or `System.out.println()` in Java. It takes data from any port, formats it in yaml and prints it in the screen or standard-output. 
 
 | Port (`symbol`) | Type | Description |
@@ -106,6 +133,15 @@ The *Terminal* block can be used to print the data emitted by any port to the te
 ---
 ### Delay
 Stage: Experimental
+
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.09.1 | Created
+</details>
 
 The *delay* block can be used to hold a data packet for a fixed duration of time before emitting it out. One of the use-case for this block is to add a delay between two Send Request blocks. It can be considered equivalent to `setTimeout` in Javascript.
 
@@ -118,6 +154,15 @@ The *delay* block can be used to hold a data packet for a fixed duration of time
 ### Test Summary
 Stage: Experimental
 
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.10.1 | Created
+</details>
+
 The *test summary* block is special output block like terminal which can accept the data emitted from the test port of *Send Request* block. 
 The summary of all the assertions can be seen in the *Test Summary* panel.
 
@@ -128,6 +173,15 @@ The summary of all the assertions can be seen in the *Test Summary* panel.
 ---
 ### For Each
 Stage: Experimental
+
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.09.1 | Created
+</details>
 
 The *For Each* block is an iterator control flow block that can be used to loop over a `List`. The block emits each individual element within the list as a separate data packet. 
 
@@ -141,6 +195,15 @@ The *For Each* block is an iterator control flow block that can be used to loop 
 ---
 ### Merge
 Stage: Experimental
+
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.10.2 | Created
+</details>
 
 The *Merge* block can be used to recursively merge two `Records` into a single `Record`.
 > Note: If both source and target contain fields with same keys, then target value will be overridden by the source.
@@ -158,6 +221,15 @@ The *Merge* block can be used to recursively merge two `Records` into a single `
 ### List Pop
 Stage: Experimental
 
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.10.4 | Created
+</details>
+
 The *List Pop* block can be used to get the last element of a List.
 
 | Port (`symbol`) | Type | Description |
@@ -170,6 +242,15 @@ The *List Pop* block can be used to get the last element of a List.
 ### Group By
 Stage: Experimental
 
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.10.4 | Created
+</details>
+
 The *Group By* block can be used generate another list by grouping together Records presents in a List based on a value present in one of the selected fields.
 
 | Port (`symbol`) | Type | Description |
@@ -181,6 +262,15 @@ The *Group By* block can be used generate another list by grouping together Reco
 
 ### Concatenate
 Stage: Experimental
+
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.09.1 | Created
+</details>
 
 > Warning: This block has been marked to removed in the future versions. This will be replace by a more versatile stream processing blocks.
 
@@ -197,6 +287,16 @@ new List.
 
 ### Parse JSON
 Stage: Removed
+
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.09.1 | Created
+  22.01.1 | Removed
+</details>
 
 > Warning: This block has been removed. Use Send Request block configuration to force parse response bodies to JSON.
 
@@ -215,6 +315,15 @@ The *Parse JSON* block can be used to parse any JSON string and create a flow da
 ### Condition
 Stage: Experimental
 
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.11.1 | Created
+</details>
+
 The *Condition* block lets you write expressions with the new [Expression input](https://github.com/postmanlabs/postman-flows/discussions/124). If the condition resolves to `True` it passes the data through the "Accept" port, and if the expression resolves to `False` it passes the data through "Reject" port
 
 | Port (`symbol`) | Type | Description |
@@ -227,6 +336,15 @@ The *Condition* block lets you write expressions with the new [Expression input]
 
 ### Check
 Stage: Experimental
+
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.11.1 | Created
+</details>
 
 The *Check* block accepts input from 2 sources and lets you write expressions with the new [Expression input](https://github.com/postmanlabs/postman-flows/discussions/124). If the condition resolves to `True` it passes the data through otherwise burns the data away.
 
@@ -241,6 +359,15 @@ The *Check* block accepts input from 2 sources and lets you write expressions wi
 ### Create Durables
 Stage: Experimental
 
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.12.2 | Created
+</details>
+
 The *Create Durables* allows bool, number, string and timestamp values to be made durable, durables or durable data is the data that can persists across mutiple connected blocks.
 
 | Port (`symbol`) | Type | Description |
@@ -253,6 +380,15 @@ The *Create Durables* allows bool, number, string and timestamp values to be mad
 ### Create Data
 Stage: Experimental
 
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  22.01.1 | Created
+</details>
+
 The *Create Data* is used for creating complex data structure Tuples, Records, Lists and Maps.
 
 | Port (`symbol`) | Type | Description |
@@ -263,7 +399,17 @@ The *Create Data* is used for creating complex data structure Tuples, Records, L
 ---
 
 ### Assign Variable
-Stage: Deprecated since v21.12.2
+Stage: Deprecated
+
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.10.3 | Created
+  21.12.2 | Deprecated
+</details>
 
 > Warning: Use Send Request's configuration to pass data to request variables. This block has been marked to removed in the future versions. Working with variables will be restricted to the Send Request block.
 
@@ -280,6 +426,16 @@ The *assign variable* can be used to take any type of input data and convert it 
 ### Create Variable
 Stage: Deprecated since v21.12.2
 
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.09.1 | Created
+  21.12.2 | Deprecated
+</details>
+
 > Warning: Use Send Request's configuration to pass data to request variables. This block has been marked to removed in the future versions. Working with variables will be restricted to the Send Request block.
 
 The *create variable* block can be used define a `Map` containing constant string values. 
@@ -293,7 +449,17 @@ The *create variable* block can be used define a `Map` containing constant strin
 
 ---
 ### Validate
-Stage: Deprecated since v21.11.1
+Stage: Deprecated
+
+<details>
+<summary>History</summary>
+<br>
+
+Version |Change|
+-- | -- |
+  21.09.1 | Created
+  21.11.1 | Deprecated
+</details>
 
 > Warning: Use 'Condition' block to conditionally pass data to the next block. This block has been marked to removed in the future versions. This will be replace by a more versatile Check block.
 
