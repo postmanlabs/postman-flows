@@ -195,7 +195,7 @@ new List.
 ---
 
 ### Parse JSON
-Stage: Experimental
+Stage: Removed
 
 > Warning: This block has been marked to removed in the future versions. This will be replace by a more generic parsing block.
 
