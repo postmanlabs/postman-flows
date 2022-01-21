@@ -240,7 +240,7 @@ The *Check* block accepts input from 2 sources and lets you write expressions wi
 ### Create Durables
 Stage: Experimental
 
-The *Create Durables* allows bool, number, string and timestamp to be made durable, durables or durable data is the data that can persists across mutiple connected blocks.
+The *Create Durables* allows bool, number, string and timestamp values to be made durable, durables or durable data is the data that can persists across mutiple connected blocks.
 
 | Port (`symbol`) | Type | Description |
 | --- | --- | --- |
