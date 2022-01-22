@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="turbo-cache-control" content="no-cache">
+
+    <!-- Primary Meta Tags -->
+    <title>Data Types</title>
+    <meta name="title" content="Data Types">
+    <meta name="description" content="Stage: 1 - Proposal" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/docs/data-types/">
+    <meta property="og:title" content="Data Types">
+    <meta property="og:description" content="Stage: 1 - Proposal">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="/docs/data-types/">
+    <meta property="twitter:title" content="Data Types">
+    <meta property="twitter:description" content="Stage: 1 - Proposal">
+    
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="/resources/css/retype.css?v=1.11.2.696143178375" rel="stylesheet" data-turbo-track="reload" />
+
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.696143178375" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.696143178375" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.696143178375" defer></script>
+</head>
+    <body>
+        <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+    <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+
+    <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+    <div class="container relative flex items-center justify-between flex-grow pr-6 md:justify-start">
+        <!-- Mobile menu button skeleton -->
+        <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center flex-shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+        <div v-cloak id="docs-sidebar-toggle"></div>
+
+        <!-- Logo -->
+        <div class="flex items-center justify-between h-full py-2 md:w-75">
+            <div class="flex items-center px-2 md:px-6">
+                <a id="docs-site-logo" href="/" class="flex items-center leading-snug text-xl">
+                    <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Postman Flows</span>
+                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+            </div>
+
+            <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+        </div>
+
+        <div class="flex justify-between md:flex-grow">
+            <!-- Top Nav -->
+            <nav class="hidden md:flex">
+    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+        <li class="md:mr-6">
+            <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://github.com/postmanlabs/postman-flows/discussions">Feedback</a>
+        </li>
+    </ul>
+</nav>
+
+            <!-- Header Right Skeleton -->
+            <div v-cloak class="flex justify-end flex-grow skeleton">
+
+                <!-- Search input mock -->
+                <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                    <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                    </div>
+
+                    <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                    style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                </div>
+
+                <!-- Mobile search button mock -->
+                <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                </div>
+
+                <!-- Dark mode switch placehokder -->
+                <div class="w-10 h-10 lg:ml-2"></div>
+
+                <!-- History button mock -->
+                <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                </div>
+            </div>
+
+            <div v-cloak class="flex items-center justify-end flex-grow">
+                <div id="docs-mobile-search-button"></div>
+                <doc-search-desktop></doc-search-desktop>
+
+                <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                <doc-history></doc-history>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <div class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+<div v-cloak class="fixed flex flex-col flex-shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+
+    <!-- Render this div, if config.showSidebarFilter is `true` -->
+    <div class="flex items-center h-16 px-6">
+        <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+    </div>
+
+    <div class="pl-6 mb-4 mt-1">
+        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+    </div>
+
+
+    <div class="flex-shrink-0 mt-auto bg-transparent dark:border-dark-650">
+        <a
+    class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by"
+    target="_blank"
+    href="https://retype.com/"
+    rel="noopener"
+>
+    <span class="text-xs whitespace-nowrap">Powered by</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+</a>
+
+    </div>
+</div>
+
+<!-- Sidebar component -->
+<doc-sidebar v-cloak>
+    <template #sidebar-footer>
+        <div
+            class="flex-shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650"
+        >
+
+            <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                <nav>
+                    <ul class="flex flex-wrap justify-center items-center">
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/postmanlabs/postman-flows/discussions">Feedback</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <a
+    class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by"
+    target="_blank"
+    href="https://retype.com/"
+    rel="noopener"
+>
+    <span class="text-xs whitespace-nowrap">Powered by</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+</a>
+
+        </div>
+    </template>
+</doc-sidebar>
+
+
+        <div class="flex-grow min-w-0 dark:bg-dark-850">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+            <div class="flex">
+    <div class="flex-grow min-w-0 px-6 md:px-16">
+        <main class="relative pt-6 pb-16">
+            <div class="docs-markdown" id="docs-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="docs-sidebar-right-toggle"></div>
+               
+                <!-- Page content  -->
+<doc-anchor-target id="data-types" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#data-types">#</doc-anchor-trigger>
+        <span>Data Types</span>
+    </h1>
+</doc-anchor-target>
+<p>Stage: 1 - Proposal</p>
+<p>Postman Flows in its heart is a dataflow language, which means that there flows
+understands all kinds of values and associates a type to data. It should also be
+noted that Flows in a hybrid typed language, which means that it perform static
+type checking to provide features like auto-complete and early warning, and it
+also performs some dynamic type checking during execution. Our intention, in the long run, is to move Flows towards being
+strictly typed language over a period of time.</p>
+<p>We are assuming most flow programmers would either be coming from a
+javascript/typescript background, or it might be their first time programming in
+an API-First language; therefore we have tried to keep the vocabulary of the
+types close to javascript/typescript.</p>
+<doc-anchor-target id="primitive-values">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#primitive-values">#</doc-anchor-trigger>
+        <span>Primitive Values</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>type</th>
+<th>What it accepts</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bool</td>
+<td><strong>true</strong> or <strong>false</strong></td>
+<td><code v-pre>true</code></td>
+</tr>
+<tr>
+<td>string</td>
+<td>utf-8 encoded characters</td>
+<td><code v-pre>foo 😎 bar</code></td>
+</tr>
+<tr>
+<td>number</td>
+<td>double precision 64-bit values or 64bit unsigned integers</td>
+<td><code v-pre>3.14</code> <br> <code v-pre>4294967295</code></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string containing RFC3339 timestamp</td>
+<td><code v-pre>1985-04-12T23:20:50.52Z</code></td>
+</tr>
+<tr>
+<td>null</td>
+<td>Exactly one value <strong>null</strong></td>
+<td><code v-pre>null</code></td>
+</tr>
+<tr>
+<td>regex</td>
+<td>A regular expression</td>
+<td><code v-pre>/ab+c/</code></td>
+</tr>
+<tr>
+<td>datatype</td>
+<td>Symbol of any data type</td>
+<td><code v-pre>string</code> <br> <code v-pre>bool</code> <br> <code v-pre>null</code></td>
+</tr>
+<tr>
+<td>range (pre-proposal)</td>
+<td>A range value</td>
+<td><code v-pre>0..10</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#boolean">#</doc-anchor-trigger>
+        <span>Boolean</span>
+    </h3>
+</doc-anchor-target>
+<p>The boolean value can contain two symbols <code v-pre>true</code> or <code v-pre>false</code> as with any programming language. The Boolean type is represented by the symbol <code v-pre>bool</code>.</p>
+<p>The <em>boolean</em> value gets automatically converted to a <em>number</em> or a <em>string</em> if required.
+|value|number|string|
+|-----|------|------|
+|<code v-pre>true</code>| <code v-pre>1</code>| <code v-pre>'true'</code>|
+|<code v-pre>false</code>| <code v-pre>0</code> | <code v-pre>'false'</code>|</p>
+<doc-anchor-target id="string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#string">#</doc-anchor-trigger>
+        <span>String</span>
+    </h3>
+</doc-anchor-target>
+<p>The String type is used to represent textual data. It is a utf-8 encoded list of characters. Just like javascript, string in Flows are also immutable, i.e once a string is created, it cannot be modified. But you can always create new strings out of existing string using operators like <em>concat</em> or <em>substring</em>.</p>
+<blockquote>
+<p><span class="docs-emoji">&#x1F4A1;</span> Tip: JSON values are of type string. To make sense of that data they serialize needs perform step called parsing to can generate a complex data-structure of primitive types. The <code v-pre>Send Request</code> block performs the parsing automatically if the <code v-pre>content-type</code> header hints at a JSON body. In cases where this automatic parsing does not take place, one will need to parse the string using the <code v-pre>JSON Parse</code> block.</p>
+</blockquote>
+<p>A <em>string</em> value cannot get converted automatically to any other type.</p>
+<doc-anchor-target id="number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#number">#</doc-anchor-trigger>
+        <span>Number</span>
+    </h3>
+</doc-anchor-target>
+<p>The number type in Flows can represent all kinds of numerical values, like Integers, Decimals, etc. Temporarily, the number internally are stored as javascript numbers, but this is going to change account for 64-bit integers and providing a unified number type.</p>
+<p>A <em>number</em> value gets automatically converted to a <em>string</em> or <em>boolean</em> if required.
+|value|boolean|string|
+|-----|------|------|
+|<code v-pre>0</code>| false | <code v-pre>'0'</code>|
+|<code v-pre>3.14</code>| true | <code v-pre>'3.14'</code>|</p>
+<doc-anchor-target id="timestamp">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#timestamp">#</doc-anchor-trigger>
+        <span>Timestamp</span>
+    </h3>
+</doc-anchor-target>
+<p>Unlike javascript, Flows consider dates are first-class type and provide a data type for storing dates. Dates are stored in-accordance to <a href="https://datatracker.ietf.org/doc/html/rfc3339">RFC 3339</a>.</p>
+<p>A <em>timestamp</em> value gets automatically converted to a <em>string</em> or <em>number</em> if required.
+|value|string|number|
+|-----|------|------|
+|<code v-pre>1985-04-12T23:20:50.52Z</code>|<code v-pre>'1985-04-12T23:20:50.52Z'</code>| <code v-pre>482196050520</code>|</p>
+<doc-anchor-target id="null">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#null">#</doc-anchor-trigger>
+        <span>Null</span>
+    </h3>
+</doc-anchor-target>
+<p>A <em>null</em> value represent a reference to non-existent values. Generally, any datatype could contain a null value instead of their actual value. In an API-First world it is very common to find this occurrence. The only possible value for the null type is <code v-pre>null</code>.</p>
+<p>Because this is so common, in order to prevent null pointer exceptions, Flow performs some deterministic automatic conversion for null value.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>value</th>
+<th>boolean</th>
+<th>string</th>
+<th>number</th>
+<th>regex</th>
+<th>timestamp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>null</code></td>
+<td><code v-pre>false</code></td>
+<td><code v-pre>''</code></td>
+<td><code v-pre>0</code></td>
+<td><code v-pre>/$^/</code></td>
+<td><code v-pre>0000-00-00T00:00:00Z</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="regex">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#regex">#</doc-anchor-trigger>
+        <span>Regex</span>
+    </h3>
+</doc-anchor-target>
+<p>Regular expressions are patterns which can be used to match character combinations in strings. Flows borrows Javascript regular expression implementation. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">Read More on MDN</a>.</p>
+<p>A <em>regex</em> value gets automatically converted to a <em>string</em> if required.
+|value|string|
+|-----|------|
+|<code v-pre>/$^/</code>|<code v-pre>'/$^/'</code>|</p>
+<doc-anchor-target id="range-pre-proposal---tbd">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#range-pre-proposal---tbd">#</doc-anchor-trigger>
+        <span>Range (Pre-Proposal) - TBD</span>
+    </h3>
+</doc-anchor-target>
+<p><em>Note: Ranges are still in pre-proposal stage and might not be implemented</em></p>
+<doc-anchor-target id="abstract-types">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#abstract-types">#</doc-anchor-trigger>
+        <span>Abstract Types</span>
+    </h2>
+</doc-anchor-target>
+<blockquote>
+<p>All complex/abstract data-types in Flows are built over the concept of <a href="https://en.wikipedia.org/wiki/Stream_(computing)">Streams</a> internally.</p>
+</blockquote>
+<doc-anchor-target id="list">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#list">#</doc-anchor-trigger>
+        <span>List</span>
+    </h3>
+</doc-anchor-target>
+<p>The list data-type represents a stream of ordered values, where values of the same type
+may occur more than once. You might be familiar with Arrays in javascript, Lists are like
+arrays but with the constraint that all elements present in the list are of same type.</p>
+<p>A typescript equivalent of List would be</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">const list : number[] = [1, 2, 3, 4, 5];</code></pre>
+</doc-codeblock></div>
+<p><em>A stream of values where all values have the same type</em></p>
+<doc-anchor-target id="tuple">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tuple">#</doc-anchor-trigger>
+        <span>Tuple</span>
+    </h3>
+</doc-anchor-target>
+<p>The tuple data-type represent an ordered sequence of finite elements. The values for each
+element of the tuple can be of different type. Unlike Lists, tuples cannot be an infinite stream,
+they are of fixed size and their size must be known before hand.</p>
+<p>A typescript equivalent of Tuple would be</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">const list : [string, number, boolean] = ['flows', 20, true];</code></pre>
+</doc-codeblock></div>
+<p><em>A fixed stream of values where values have same or different types</em></p>
+<doc-anchor-target id="record">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#record">#</doc-anchor-trigger>
+        <span>Record</span>
+    </h3>
+</doc-anchor-target>
+<p>A record is a collection of fields(key-value pair) where the key is of string type and the values
+can be of different types. These field are fixed in number and follow a particular sequence. If you have some knowledge of C, you will know these are <code v-pre>struct</code>.</p>
+<p>A typescript equivalent of Record would be</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">interface Box {
+  name: string;
+  length: number;
+  width: number;
+  height: number;
+  empty: boolean
+}</code></pre>
+</doc-codeblock></div>
+<p><em>A stream of fields(key:value) where key is string and values have same or different types</em></p>
+<doc-anchor-target id="map--dictionary">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#map--dictionary">#</doc-anchor-trigger>
+        <span>Map / Dictionary</span>
+    </h3>
+</doc-anchor-target>
+<p>A map is a collection of fields where the key can be a value of a primitive type and
+corresponding value can be of any data-type. The constraint here being that all fields
+must have keys and values of same type.</p>
+<p>A typescript equivalent of Map would be</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">type map: {[key: string]: number} = {'a': 1, 'b': 2, 'c': 3};</code></pre>
+</doc-codeblock></div>
+<p><em>A stream of fields(key:value) where keys are of same type and values are of same type</em></p>
+
+
+
+
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results />
+            </div>
+
+            
+<nav class="flex mt-14">
+    <div class="w-1/2">
+        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/docs/blocks/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+            <span>
+                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                <span class="block mt-1">Blocks</span>
+            </span>
+        </a>
+    </div>
+
+    <div class="w-1/2">
+    </div>
+</nav>
+
+
+        </main>
+
+        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between">
+    <div>
+        <ul class="flex flex-wrap items-center text-sm">
+</ul>
+
+    </div>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2022. All rights reserved.</p>
+</div>
+</footer>
+
+        </div>
+    </div>
+    
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 transform translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:flex-shrink-0 lg:pt-6 lg:transform-none lg:w-56 lg:z-0 md:w-72 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+        </div>
+    </div>
+    
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
+
+
+        <div id="docs-overlay-target"></div>
+
+        <script>window.__DOCS__ = { "title": "Data Types", icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+    </body>
+</html>
