@@ -5,7 +5,17 @@ branding:
   title: Postman Flows
   label: Docs
 links:
-- text: Feedback
+- text: Home
+  link: /README.md
+  icon: home
+
+- text: Discussions
   link: https://github.com/postmanlabs/postman-flows/discussions
+  icon: comment-discussion
+  target: blank
+
+- text: Github
+  link: https://github.com/postmanlabs/postman-flows
+  icon: mark-github
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
