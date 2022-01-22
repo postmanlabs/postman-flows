@@ -1,0 +1,11 @@
+input: .
+output: .retype
+url: # Add your website address here
+branding:
+  title: Postman Flows
+  label: Docs
+links:
+- text: Feedback
+  link: https://github.com/postmanlabs/postman-flows/discussions
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
