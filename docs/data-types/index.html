@@ -25,12 +25,12 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/postman-flows/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/postman-flows/resources/css/retype.css?v=1.11.2.696153181375" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/postman-flows/resources/css/retype.css?v=1.11.2.696153572764" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=1.11.2.696153181375" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=1.11.2.696153572764" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/postman-flows/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=1.11.2.696153181375" defer></script>
-    <script id="prism-js" type="text/javascript" src="/postman-flows/resources/js/prism.js?v=1.11.2.696153181375" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=1.11.2.696153572764" defer></script>
+    <script id="prism-js" type="text/javascript" src="/postman-flows/resources/js/prism.js?v=1.11.2.696153572764" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -294,11 +294,30 @@ types close to javascript/typescript.</p>
     </h3>
 </doc-anchor-target>
 <p>The boolean value can contain two symbols <code v-pre>true</code> or <code v-pre>false</code> as with any programming language. The Boolean type is represented by the symbol <code v-pre>bool</code>.</p>
-<p>The <em>boolean</em> value gets automatically converted to a <em>number</em> or a <em>string</em> if required.
-|value|number|string|
-|-----|------|------|
-|<code v-pre>true</code>| <code v-pre>1</code>| <code v-pre>'true'</code>|
-|<code v-pre>false</code>| <code v-pre>0</code> | <code v-pre>'false'</code>|</p>
+<p>The <em>boolean</em> value gets automatically converted to a <em>number</em> or a <em>string</em> if required.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>value</th>
+<th>number</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>true</code></td>
+<td><code v-pre>1</code></td>
+<td><code v-pre>'true'</code></td>
+</tr>
+<tr>
+<td><code v-pre>false</code></td>
+<td><code v-pre>0</code></td>
+<td><code v-pre>'false'</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="string">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#string">#</doc-anchor-trigger>
@@ -317,11 +336,30 @@ types close to javascript/typescript.</p>
     </h3>
 </doc-anchor-target>
 <p>The number type in Flows can represent all kinds of numerical values, like Integers, Decimals, etc. Temporarily, the number internally are stored as javascript numbers, but this is going to change account for 64-bit integers and providing a unified number type.</p>
-<p>A <em>number</em> value gets automatically converted to a <em>string</em> or <em>boolean</em> if required.
-|value|boolean|string|
-|-----|------|------|
-|<code v-pre>0</code>| false | <code v-pre>'0'</code>|
-|<code v-pre>3.14</code>| true | <code v-pre>'3.14'</code>|</p>
+<p>A <em>number</em> value gets automatically converted to a <em>string</em> or <em>boolean</em> if required.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>value</th>
+<th>boolean</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>0</code></td>
+<td>false</td>
+<td><code v-pre>'0'</code></td>
+</tr>
+<tr>
+<td><code v-pre>3.14</code></td>
+<td>true</td>
+<td><code v-pre>'3.14'</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="timestamp">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#timestamp">#</doc-anchor-trigger>
@@ -329,10 +367,25 @@ types close to javascript/typescript.</p>
     </h3>
 </doc-anchor-target>
 <p>Unlike javascript, Flows consider dates are first-class type and provide a data type for storing dates. Dates are stored in-accordance to <a href="https://datatracker.ietf.org/doc/html/rfc3339">RFC 3339</a>.</p>
-<p>A <em>timestamp</em> value gets automatically converted to a <em>string</em> or <em>number</em> if required.
-|value|string|number|
-|-----|------|------|
-|<code v-pre>1985-04-12T23:20:50.52Z</code>|<code v-pre>'1985-04-12T23:20:50.52Z'</code>| <code v-pre>482196050520</code>|</p>
+<p>A <em>timestamp</em> value gets automatically converted to a <em>string</em> or <em>number</em> if required.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>value</th>
+<th>string</th>
+<th>number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>1985-04-12T23:20:50.52Z</code></td>
+<td><code v-pre>'1985-04-12T23:20:50.52Z'</code></td>
+<td><code v-pre>482196050520</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="null">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#null">#</doc-anchor-trigger>
@@ -372,10 +425,23 @@ types close to javascript/typescript.</p>
     </h3>
 </doc-anchor-target>
 <p>Regular expressions are patterns which can be used to match character combinations in strings. Flows borrows Javascript regular expression implementation. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">Read More on MDN</a>.</p>
-<p>A <em>regex</em> value gets automatically converted to a <em>string</em> if required.
-|value|string|
-|-----|------|
-|<code v-pre>/$^/</code>|<code v-pre>'/$^/'</code>|</p>
+<p>A <em>regex</em> value gets automatically converted to a <em>string</em> if required.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>value</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>/$^/</code></td>
+<td><code v-pre>'/$^/'</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="range-pre-proposal---tbd">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#range-pre-proposal---tbd">#</doc-anchor-trigger>
