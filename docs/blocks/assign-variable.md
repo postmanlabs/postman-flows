@@ -15,7 +15,7 @@
 Use `Send Request` blocks `Assign value to variable` feature to set variable values instead.
 !!!
 
-The **Assign variable** can be used to take any type of input data and convert it to a `Map` containing strings as values, that can be used as a data-variable. The assign variable block is not capable of defining constant string values. If string values are needed the [Create Variable](#Create-Variable) block can be used in conjunction with the [Merge](#Merge) block. 
+The **Assign variable** can be used to take any type of input data and convert it to a `Map` containing strings as values, that can be used as a data-variable. The assign variable block is not capable of defining constant string values. If string values are needed the [Create Variable](create-variable) block can be used in conjunction with the [Merge](merge) block. 
 
 > Note: Nested records are not supported, the values of the records can only be strings or values that can be casted to a string.
 
