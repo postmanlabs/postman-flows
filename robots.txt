@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml.gz
+Sitemap: https://www.postmanlabs.com/postman-flows/sitemap.xml.gz
