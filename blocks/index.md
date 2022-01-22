@@ -1,3 +1,8 @@
+---
+icon: package
+order: 1
+---
+
 # Blocks
 
 A block is a small actor/process that perform some predefine action. Flows comes in-built with some predefined blocks. A block starts executing when it has some data in all of it's input ports.
