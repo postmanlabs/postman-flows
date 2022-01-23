@@ -15,16 +15,16 @@ an API-First language; therefore we have tried to keep the vocabulary of the
 types close to javascript/typescript.
 
 ## Primitive Values
-| type                 | What it accepts                                           | Example                          |
-| -------------------- | --------------------------------------------------------- | -------------------------------- |
-| bool                 | **true** or **false**                                     | `true`                           |
-| string               | utf-8 encoded characters                                  | `foo 😎 bar`                      |
-| number               | double precision 64-bit values or 64bit unsigned integers | `3.14` <br> `4294967295`         |
-| timestamp            | string containing RFC3339 timestamp                       | `1985-04-12T23:20:50.52Z`        |
-| null                 | Exactly one value **null**                                | `null`                           |
-| regex                | A regular expression                                      | `/ab+c/`                         |
-| datatype             | Symbol of any data type                                   | `string` <br> `bool` <br> `null` |
-| range (pre-proposal) | A range value                                             | `0..10`                          |
+| type                 | What it accepts                                           | Example                   |
+| -------------------- | --------------------------------------------------------- | ------------------------- |
+| bool                 | **true** or **false**                                     | `true`                    |
+| string               | utf-8 encoded characters                                  | `foo 😎 bar`               |
+| number               | double precision 64-bit values or 64bit unsigned integers | `3.14` <br> `4294967295`  |
+| timestamp            | string containing RFC3339 timestamp                       | `1985-04-12T23:20:50.52Z` |
+| null                 | Exactly one value **null**                                | `null`                    |
+| regex                | A regular expression                                      | `/ab+c/`                  |
+| symbol               | Symbol of various type                                    | `string` <br> `null`      |
+| range (pre-proposal) | A range value                                             | `0..10`                   |
 
 ### Boolean
 The boolean value can contain two symbols `true` or `false` as with any programming language. The Boolean type is represented by the symbol `bool`.
