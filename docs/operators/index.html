@@ -7,21 +7,21 @@
     <meta name="turbo-cache-control" content="no-cache">
 
     <!-- Primary Meta Tags -->
-    <title>Check</title>
-    <meta name="title" content="Check">
-    <meta name="description" content="Version" />
+    <title>Expressions &amp; Operators</title>
+    <meta name="title" content="Expressions & Operators">
+    <meta name="description" content="Expression and operators are the means why which you can operate over all kinds of data within Flows." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.postmanlabs.com/postman-flows/blocks/check/">
-    <meta property="og:title" content="Check">
-    <meta property="og:description" content="Version">
+    <meta property="og:url" content="https://www.postmanlabs.com/postman-flows/docs/operators/">
+    <meta property="og:title" content="Expressions & Operators">
+    <meta property="og:description" content="Expression and operators are the means why which you can operate over all kinds of data within Flows.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.postmanlabs.com/postman-flows/blocks/check/">
-    <meta property="twitter:title" content="Check">
-    <meta property="twitter:description" content="Version">
+    <meta property="twitter:url" content="https://www.postmanlabs.com/postman-flows/docs/operators/">
+    <meta property="twitter:title" content="Expressions & Operators">
+    <meta property="twitter:description" content="Expression and operators are the means why which you can operate over all kinds of data within Flows.">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/postman-flows/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -210,86 +210,358 @@
                 <div id="docs-sidebar-right-toggle"></div>
                
                 <!-- Page content  -->
-<doc-anchor-target id="check" class="break-words">
+<doc-anchor-target id="expressions--operators" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#check">#</doc-anchor-trigger>
-        <span>Check</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#expressions--operators">#</doc-anchor-trigger>
+        <span>Expressions &amp; Operators</span>
     </h1>
 </doc-anchor-target>
-<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>Experimental</span>
-</span></p>
-<details>
-<summary>History</summary>
-<br>
+<p>Expression and operators are the means why which you can operate over all kinds of
+data within Flows. There are various kinds of operators that can be combined with
+data literals and data references to transform or create new data.</p>
+<doc-anchor-target id="operators">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#operators">#</doc-anchor-trigger>
+        <span>Operators</span>
+    </h2>
+</doc-anchor-target>
+<p>These are operators that flows currently supports</p>
+<doc-anchor-target id="comparison-operators">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comparison-operators">#</doc-anchor-trigger>
+        <span>Comparison Operators</span>
+    </h3>
+</doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Version</th>
-<th>Changes</th>
+<th>Operator</th>
+<th>Description</th>
+<th>Left</th>
+<th>Right</th>
+<th>Result</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>21.11.1</td>
-<td>Added in v21.11.1</td>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>==</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if operands are same</td>
+<td><code v-pre>number</code> </br> <code v-pre>string</code> </br> <code v-pre>bool</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>number</code> </br> <code v-pre>string</code> </br> <code v-pre>bool</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>!=</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if operands are not same</td>
+<td><code v-pre>number</code> </br> <code v-pre>string</code> </br> <code v-pre>bool</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>number</code> </br> <code v-pre>string</code> </br> <code v-pre>bool</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>in</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if string on left is substring of the right</td>
+<td><code v-pre>string</code></td>
+<td><code v-pre>string</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>in</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if the specified field is present in the Record</td>
+<td><code v-pre>string</code></td>
+<td><code v-pre>record</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>!in</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if string on left is not a substring of the right</td>
+<td><code v-pre>string</code></td>
+<td><code v-pre>string</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>!in</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if the specified field is not present in the Record</td>
+<td><code v-pre>string</code></td>
+<td><code v-pre>record</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>match</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if the string matches the regular expression</td>
+<td><code v-pre>string</code></td>
+<td><code v-pre>regex</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>!match</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if the string does not match the regular expression</td>
+<td><code v-pre>string</code></td>
+<td><code v-pre>regex</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>is</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if the expression is of the type</td>
+<td><code v-pre>any</code></td>
+<td><code v-pre>datatype</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>!is</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if the expression if not of the type</td>
+<td><code v-pre>any</code></td>
+<td><code v-pre>datatype</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>&lt;</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if left operand is less than right operand</td>
+<td><code v-pre>number</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>number</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>&lt;=</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if left operand is less than or equal to right operand</td>
+<td><code v-pre>number</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>number</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>&gt;</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if left operand is greater than right operand</td>
+<td><code v-pre>number</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>number</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>&gt;=</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> if left operand is greater than or equal to right operand</td>
+<td><code v-pre>number</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>number</code> </br> <code v-pre>timestamp</code></td>
+<td><code v-pre>bool</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-</details>
-<p>The <strong>Check</strong> block accepts input from 2 sources and lets you write expressions with the new <a href="https://github.com/postmanlabs/postman-flows/discussions/124">Expression input</a>.
-If the condition resolves to <code v-pre>True</code> it passes the data through otherwise burns the data away.</p>
-<doc-tabs>
-<doc-tab id="input">
-<template #title>Input</template>
+<doc-anchor-target id="logical-operators">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logical-operators">#</doc-anchor-trigger>
+        <span>Logical Operators</span>
+    </h3>
+</doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Port</th>
-<th>Symbol</th>
+<th>Operator</th>
+<th>Description</th>
+<th>Left</th>
+<th>Right</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>AND</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> when both operands evaluate to <code v-pre>true</code></td>
+<td><code v-pre>bool</code></td>
+<td><code v-pre>bool</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>OR</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> when either operands evaluate to <code v-pre>true</code></td>
+<td><code v-pre>bool</code></td>
+<td><code v-pre>bool</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>!</span>
+</span></td>
+<td>Evaluates to <code v-pre>true</code> when operand is <code v-pre>false</code> and vice-versa</td>
+<td></td>
+<td><code v-pre>bool</code></td>
+<td><code v-pre>bool</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="unary-operators">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#unary-operators">#</doc-anchor-trigger>
+        <span>Unary Operators</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Operand</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>to_json</span>
+</span></td>
+<td>Serialized a structure to a JSON String</td>
+<td><code v-pre>record</code>/<code v-pre>list</code>/<code v-pre>map</code>/<code v-pre>tuple</code></td>
+<td><code v-pre>string</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>length</span>
+</span></td>
+<td>Evaluates to the length of the data</td>
+<td><code v-pre>string</code>/ <code v-pre>record</code>/<code v-pre>list</code>/<code v-pre>map</code>/<code v-pre>tuple</code></td>
+<td><code v-pre>number</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>size</span>
+</span></td>
+<td>Evaluates to the size in bytes of the data</td>
+<td><code v-pre>string</code>/ <code v-pre>record</code>/<code v-pre>list</code>/<code v-pre>map</code>/<code v-pre>tuple</code></td>
+<td><code v-pre>number</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="query-operators">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#query-operators">#</doc-anchor-trigger>
+        <span>Query Operators</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Left</th>
+<th>Right</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>find</span>
+</span></td>
+<td>Returns an new list where the right expression evaluates to true for the item</td>
+<td><code v-pre>list</code></td>
+<td><code v-pre>bool</code></td>
+<td><code v-pre>list</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="proposals">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#proposals">#</doc-anchor-trigger>
+        <span>Proposals</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3">
+<p>These operators are in proposal stage and may/may-not be implemented. Please help us make
+better decision by showing you use-cases in <a href="https://github.com/postmanlabs/postman-flows/discussions">Discussions</a>.</p>
+        </div>
+    </div>
+</div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Operator</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Primary</td>
-<td><code v-pre>primary</code></td>
-<td>Data which needs to pass through if condition resolves to <code v-pre>True</code></td>
+<td>sort</td>
+<td>Returns a sorted list</td>
 </tr>
 <tr>
-<td>Secondary</td>
-<td><code v-pre>secondary</code></td>
-<td>Other source of data which does not pass through</td>
+<td>groupby</td>
+<td>Returns a record which contains fields that group a particular list</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Sum and Concatenation operators. Can be used to add numbers, concatenate string and list and merge records</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Subtract and Difference operator. Can be used to subtract number, strip string and list, different on records</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplication of numbers</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Division of numbers</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Remainder operator</td>
+</tr>
+<tr>
+<td>^</td>
+<td>Exponent operator</td>
 </tr>
 </tbody>
 </table>
 </div>
-</doc-tab>
-<doc-tab id="output">
-<template #title>Output</template>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Port</th>
-<th>Symbol</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Primary</td>
-<td><code v-pre>primary</code></td>
-<td>Passes data received from <code v-pre>Primary</code> input port if the condition resolves to <code v-pre>True</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</doc-tab>
-</doc-tabs>
 
 
 
@@ -299,7 +571,7 @@ If the condition resolves to <code v-pre>True</code> it passes the data through 
             </div>
 
             <div class="flex flex-wrap items-center justify-between mt-14">
-    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/postmanlabs/postman-flows/blob/main/blocks/check.md" target="_blank" rel="noopener">
+    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/postmanlabs/postman-flows/blob/main/docs/operators.md" target="_blank" rel="noopener">
         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
         <span>Edit this page</span>
     </a>
@@ -309,20 +581,20 @@ If the condition resolves to <code v-pre>True</code> it passes the data through 
 
 <nav class="flex mt-14">
     <div class="w-1/2">
-        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/postman-flows/blocks/assign-variable/">
+        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/postman-flows/docs/data-types/">
             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
             <span>
                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                <span class="block mt-1">Assign Variable</span>
+                <span class="block mt-1">Data Types</span>
             </span>
         </a>
     </div>
 
     <div class="w-1/2">
-        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/postman-flows/blocks/concatenate/">
+        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/postman-flows/faq/">
             <span>
                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                <span class="block mt-1">Concatenate</span>
+                <span class="block mt-1">FAQ</span>
             </span>
             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
         </a>
@@ -370,6 +642,6 @@ If the condition resolves to <code v-pre>True</code> it passes the data through 
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Check", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+        <script>window.__DOCS__ = { "title": "Expressions & Operators", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
     </body>
 </html>
