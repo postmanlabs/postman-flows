@@ -1,16 +1,16 @@
 # Check
+
 [!badge text="Experimental" variant="primary"]
 
-<details>
-<summary>History</summary>
-<br>
+==- :icon-history: History
 
 | Version | Changes           |
 | ------- | ----------------- |
 | 21.11.1 | Added in v21.11.1 |
-</details>
 
-The **Check** block accepts input from 2 sources and lets you write expressions with the new [Expression input](https://github.com/postmanlabs/postman-flows/discussions/124). 
+===
+
+The **Check** block accepts input from 2 sources and lets you write expressions with the new [Expression input](https://github.com/postmanlabs/postman-flows/discussions/124).
 If the condition resolves to `True` it passes the data through otherwise burns the data away.
 
 +++ Input

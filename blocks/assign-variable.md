@@ -1,23 +1,25 @@
 # Assign Variable
+
 [!badge text="Deprecated" variant="warning"]
 
-<details>
-<summary>History</summary>
-<br>
+==- :icon-history: History
 
 | Version | Changes           |
 | ------- | ----------------- |
 | 21.12.2 | Deprecated        |
 | 21.10.3 | Added in v21.10.3 |
-</details>
+
+===
 
 !!!warning Deprecated
 Use `Send Request` blocks `Assign value to variable` feature to set variable values instead.
 !!!
 
-The **Assign variable** can be used to take any type of input data and convert it to a `Map` containing strings as values, that can be used as a data-variable. The assign variable block is not capable of defining constant string values. If string values are needed the [Create Variable](create-variable) block can be used in conjunction with the [Merge](merge) block. 
+The **Assign variable** can be used to take any type of input data and convert it to a `Map` containing strings as values, that can be used as a data-variable. The assign variable block is not capable of defining constant string values. If string values are needed the [Create Variable](create-variable) block can be used in conjunction with the [Merge](merge) block.
 
-> Note: Nested records are not supported, the values of the records can only be strings or values that can be casted to a string.
+!!!
+Nested records are not supported, the values of the records can only be strings or values that can be casted to a string.
+!!!
 
 +++ Input
 | Port | Symbol | Description              |

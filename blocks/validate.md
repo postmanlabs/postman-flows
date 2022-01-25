@@ -1,21 +1,21 @@
 ### Validate
+
 Stage: [!badge text="Deprecated" variant="warning"]
 
-<details>
-<summary>History</summary>
-<br>
+==- :icon-history: History
 
 | Version | Changes           |
 | ------- | ----------------- |
 | 21.11.1 | Deprecated        |
 | 21.09.1 | Added in v21.09.1 |
-</details>
 
-!!!warning Deprecated 
+===
+
+!!!warning Deprecated
 Use **Condition** block to conditionally pass data to the next block instead.
 !!!
 
-The *Validate* block is a conditional flow control block that routes a data packet to either the `true` port or `false` port based on condition. This block uses some information present within the data itself to perform the validation check.
+The **Validate** block is a conditional flow control block that routes a data packet to either the `true` port or `false` port based on condition. This block uses some information present within the data itself to perform the validation check.
 
 +++ Input
 | Port          | Symbol  | Description               |

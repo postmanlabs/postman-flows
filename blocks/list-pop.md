@@ -1,18 +1,18 @@
 # List Pop
+
 [!badge text="Experimental" variant="primary"]
 
-<details>
-<summary>History</summary>
-<br>
+==- :icon-history: History
 
 | Version | Changes           |
 | ------- | ----------------- |
 | 21.10.4 | Added in v21.10.4 |
-</details>
 
-The *List Pop* block can be used to get the last element of a List.
+===
 
-!!!warning 
+The **List Pop** block can be used to get the last element of a List.
+
+!!!warning
 This block will be removed in the future versions and proper operator will be added in expressions.
 Please use with caution!
 !!!
