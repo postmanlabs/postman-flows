@@ -5,7 +5,8 @@ icon: question
 
 # Frequently Asked Questions :thinking_face:
 
-### Why are my pre-request and test scripts not running in flows? 
+### Why are my pre-request and test scripts not running in flows?
+
 Pre-request and tests are actually running in flows, but environment, globals updated
 is blocked in flows. The reason for this decision has been explained in the following document.
 [!ref Environment/Global not updating](https://github.com/postmanlabs/postman-flows/discussions/142)

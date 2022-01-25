@@ -5,6 +5,7 @@ data within Flows. There are various kinds of operators that can be combined wit
 data literals and data references to transform or create new data.
 
 ## Operators
+
 These are operators that flows currently supports
 
 ### Comparison Operators
@@ -50,6 +51,7 @@ These are operators that flows currently supports
 | [!badge text="find" variant="info"] | Returns an new list where the right expression evaluates to true for the item | `list` | `bool` | `list` |
 
 ### Proposals
+
 !!!warning
 These operators are in proposal stage and may/may-not be implemented. Please help us make
 better decision by showing you use-cases in [Discussions](https://github.com/postmanlabs/postman-flows/discussions).
