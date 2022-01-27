@@ -16,20 +16,22 @@
     <meta property="og:url" content="https://www.postmanlabs.com/postman-flows/blocks/">
     <meta property="og:title" content="Blocks">
     <meta property="og:description" content="A block is a small actor/process that perform some predefine action. Flows comes in-built with some predefined blocks.">
+    <meta property="og:image" content="https://www.postmanlabs.com/postman-flows/postman-flows/static/block-anatomy.svg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.postmanlabs.com/postman-flows/blocks/">
     <meta property="twitter:title" content="Blocks">
     <meta property="twitter:description" content="A block is a small actor/process that perform some predefine action. Flows comes in-built with some predefined blocks.">
+    <meta property="twitter:image" content="https://www.postmanlabs.com/postman-flows/postman-flows/static/block-anatomy.svg">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/postman-flows/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/postman-flows/resources/css/retype.css?v=1.11.2.696259646577" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/postman-flows/resources/css/retype.css?v=1.11.2.696581991953" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=1.11.2.696259646577" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=1.11.2.696581991953" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/postman-flows/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=1.11.2.696259646577" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=1.11.2.696581991953" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -220,6 +222,60 @@
 <blockquote>
 <p>This page is maintained as a source of truth for all the blocks that are available within Flows. Use the ideas section of discussion to suggest any modifications in behavior to the existing blocks or any ideas for new blocks.</p>
 </blockquote>
+<doc-anchor-target id="anatomy">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#anatomy">#</doc-anchor-trigger>
+        <span>Anatomy</span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="../static/block-anatomy.svg" class="w-full" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-panels>
+   <doc-panel id="1-name" collapsed>
+       <template #title>1 - <strong>Name</strong></template>
+<p>This is the name of the block</p>
+   </doc-panel>
+   <doc-panel id="2-run-state" collapsed>
+       <template #title>2 - <strong>Run State</strong></template>
+<p>An indicator telling the state of the block: default, running, ran successfully or ran unsuccessfully</p>
+   </doc-panel>
+   <doc-panel id="3-expand" collapsed>
+       <template #title>3 - <strong>Expand</strong></template>
+<p>Expand the block to view more configurations and information</p>
+   </doc-panel>
+   <doc-panel id="4-options" collapsed>
+       <template #title>4 - <strong>Options</strong></template>
+<p>Contains additional options for the block</p>
+   </doc-panel>
+   <doc-panel id="5-required-input-port" collapsed>
+       <template #title>5 - <strong>Required Input Port</strong></template>
+<p>This is a required port and needs a connection for the block to be executable</p>
+   </doc-panel>
+   <doc-panel id="6-optional-input-port" collapsed>
+       <template #title>6 - <strong>Optional Input Port</strong></template>
+<p>This is an optional port and block will execute even if there is not connection of the port</p>
+   </doc-panel>
+   <doc-panel id="7-output-port" collapsed>
+       <template #title>7 - <strong>Output Port</strong></template>
+<p>This is the output port where the result of the block is emitted</p>
+   </doc-panel>
+   <doc-panel id="8-configuration" collapsed>
+       <template #title>8 - <strong>Configuration</strong></template>
+<p>These are the quick configuration for blocks. Some configuration may not be shown here.</p>
+   </doc-panel>
+   <doc-panel id="9-signal-input" collapsed>
+       <template #title>9 - <strong>Signal Input</strong></template>
+<p>This is the signal port that can be connected to prevent the execution of the block until the
+signal turns high.</p>
+   </doc-panel>
+   <doc-panel id="10-signal-output" collapsed>
+       <template #title>10 -  <strong>Signal Output</strong></template>
+<p>This is the signal output port that emits a high signal when the block completes its processing.</p>
+   </doc-panel>
+</doc-panels>
 <doc-anchor-target id="stability">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#stability">#</doc-anchor-trigger>
