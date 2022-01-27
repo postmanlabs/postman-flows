@@ -15,9 +15,9 @@ A block is a small actor/process that perform some predefine action. Flows comes
 ==- 1 - **Name**
 This is the name of the block
 ==- 2 - **Run State**
-This is the run state of the block
+An indicator telling the state of the block: default, running, ran successfully or ran unsuccessfully 
 ==- 3 - **Expand**
-Expand to configuration and information about the block
+Expand the block to view more configurations and information 
 ==- 4 - **Options**
 Contains additional options for the block
 ==- 5 - **Required Input Port**
