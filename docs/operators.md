@@ -35,6 +35,23 @@ These are operators that flows currently supports
 | [!badge text="!" variant="info"]   | Evaluates to `true` when operand is `false` and vice-versa  |        | `bool` | `bool` |
 
 
+### Arithmetic Operators
+
+| Operator                          | Description                                                                | Left        | Right    | Result      |
+| --------------------------------- | -------------------------------------------------------------------------- | ----------- | -------- | ----------- |
+| [!badge text="+" variant="info"]  | Adds one operand to the other                                              | `number`    | `number` | `number`    |
+| [!badge text="+" variant="info"]  | Increment the timestamp by the given number of milliseconds                | `timestamp` | `number` | `timestamp` |
+| [!badge text="+" variant="info"]  | Evaluates to a new string by concatenating both operands                   | `string`    | `string` | `string`    |
+| [!badge text="+" variant="info"]  | Evaluates to a new list by concatenating both operands                     | `List`      | `List`   | `List`      |
+| [!badge text="+" variant="info"]  | Evaluates to a new tuple by concatenating both operands                    | `tuple`     | `tuple`  | `tuple`     |
+| [!badge text="-" variant="info"]  | Subtracts the second operand from the first                                | `number`    | `number` | `number`    |
+| [!badge text="-" variant="info"]  | Decrement the timestamp by the given number of milliseconds                | `timestamp` | `number` | `timestamp` |
+| [!badge text="*"  variant="info"] | Multiplies one operand by the other                                        | `number`    | `number` | `number`    |
+| [!badge text="*" variant="info"]  | Evaluates to a new string by repeated n times                              | `string`    | `number` | `string`    |
+| [!badge text="/" variant="info"]  | Divides the first operand by the second                                    | `number`    | `number` | `number`    |
+| [!badge text="%" variant="info"]  | Divides the first INTEGER operand by the second, and returns the remainder | `number`    | `number` | `number`    |
+
+
 ### Unary Operators
 
 | Operator                                | Description                                | Operand                                 | Result   |
@@ -45,9 +62,10 @@ These are operators that flows currently supports
 
 ### Query Operators
 
-| Operator                            | Description                                                                   | Left   | Right  | Result |
-| ----------------------------------- | ----------------------------------------------------------------------------- | ------ | ------ | ------ |
-| [!badge text="find" variant="info"] | Returns an new list where the right expression evaluates to true for the item | `list` | `bool` | `list` |
+| Operator                            | Description                                                                       | Left   | Right  | Result |
+| ----------------------------------- | --------------------------------------------------------------------------------- | ------ | ------ | ------ |
+| [!badge text="find" variant="info"] | Evaluates to a new list where the right expression evaluates to true for the item | `list` | `bool` | `list` |
+
 
 ### Proposals
 !!!warning
@@ -55,13 +73,8 @@ These operators are in proposal stage and may/may-not be implemented. Please hel
 better decision by showing you use-cases in [Discussions](https://github.com/postmanlabs/postman-flows/discussions).
 !!!
 
-| Operator | Description                                                                                                   |
-| -------- | ------------------------------------------------------------------------------------------------------------- |
-| sort     | Returns a sorted list                                                                                         |
-| groupby  | Returns a record which contains fields that group a particular list                                           |
-| +        | Sum and Concatenation operators. Can be used to add numbers, concatenate string and list and merge records    |
-| -        | Subtract and Difference operator. Can be used to subtract number, strip string and list, different on records |
-| *        | Multiplication of numbers                                                                                     |
-| /        | Division of numbers                                                                                           |
-| %        | Remainder operator                                                                                            |
-| ^        | Exponent operator                                                                                             |
+| Operator | Description                                                              |
+| -------- | ------------------------------------------------------------------------ |
+| sort     | Evaluates to a sorted list                                               |
+| groupby  | Evaluates to a record which contains fields that group a particular list |
+| ^        | Exponent operator                                                        |
