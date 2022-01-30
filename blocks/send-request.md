@@ -1,16 +1,16 @@
 # Send Request
+
 [!badge text="Experimental" variant="primary"]
 
-<details>
-<summary>History</summary>
-<br>
+==- :icon-history: History
 
 | Version | Changes           |
 | ------- | ----------------- |
 | 21.09.1 | Added in v21.09.1 |
-</details>
 
-The `Send Request` block can be used to send one of the requests defined in a collection inside the current workspace.
+===
+
+The **Send Request** block can be used to send one of the requests defined in a collection inside the current workspace.
 This is block optionally accept a Record in its variable port and uses it to generate data-variable to satisfy the variables used within the selected Request.
 
 +++ Input

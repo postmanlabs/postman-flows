@@ -1,16 +1,16 @@
 # Create Durables
+
 [!badge text="Experimental" variant="primary"]
 
-<details>
-<summary>History</summary>
-<br>
+==- :icon-history: History
 
 | Version | Changes           |
 | ------- | ----------------- |
 | 21.12.2 | Added in v21.12.2 |
-</details>
 
-The *Create Durables* allows bool, number, string and timestamp values to be made durable. 
+===
+
+The **Create Durables** allows bool, number, string and timestamp values to be made durable.
 Durables or durable data is the data that can persists across multiple connected blocks.
 
 +++ Input

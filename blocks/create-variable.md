@@ -1,23 +1,25 @@
 # Create Variable
+
 [!badge text="Deprecated" variant="warning"]
 
-<details>
-<summary>History</summary>
-<br>
+==- :icon-history: History
 
 | Version | Changes           |
 | ------- | ----------------- |
 | 21.12.2 | Deprecated        |
 | 21.09.1 | Added in v21.12.2 |
-</details>
+
+===
 
 !!!warning Deprecated
-Use `Send Request` blocks `Assign value to variable` feature to set variable values instead.
+Use **Send Request** blocks `Assign value to variable` feature to set variable values instead.
 !!!
 
-The *create variable* block can be used define a `Map` containing constant string values. 
+The **Create Variable** block can be used define a `Map` containing constant string values.
 
-> Note: Nested records are not supported, the values of the records can only be strings or values that can be casted to a string.
+!!!
+Nested records are not supported, the values of the records can only be strings or values that can be casted to a string.
+!!!
 
 +++ Input
 | Port    | Symbol    | Description                                      |
