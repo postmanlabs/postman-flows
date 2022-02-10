@@ -25,11 +25,11 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/postman-flows/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/postman-flows/resources/css/retype.css?v=1.11.2.696832075950" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/postman-flows/resources/css/retype.css?v=1.11.2.697824905502" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=1.11.2.696832075950" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=1.11.2.697824905502" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/postman-flows/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=1.11.2.696832075950" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=1.11.2.697824905502" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -421,6 +421,126 @@ data literals and data references to transform or create new data.</p>
 </tbody>
 </table>
 </div>
+<doc-anchor-target id="arithmetic-operators">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arithmetic-operators">#</doc-anchor-trigger>
+        <span>Arithmetic Operators</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Left</th>
+<th>Right</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>+</span>
+</span></td>
+<td>Adds one operand to the other</td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>number</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>+</span>
+</span></td>
+<td>Increment the timestamp by the given number of milliseconds</td>
+<td><code v-pre>timestamp</code></td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>timestamp</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>+</span>
+</span></td>
+<td>Evaluates to a new string by concatenating both operands</td>
+<td><code v-pre>string</code></td>
+<td><code v-pre>string</code></td>
+<td><code v-pre>string</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>+</span>
+</span></td>
+<td>Evaluates to a new list by concatenating both operands</td>
+<td><code v-pre>List</code></td>
+<td><code v-pre>List</code></td>
+<td><code v-pre>List</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>+</span>
+</span></td>
+<td>Evaluates to a new tuple by concatenating both operands</td>
+<td><code v-pre>tuple</code></td>
+<td><code v-pre>tuple</code></td>
+<td><code v-pre>tuple</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>-</span>
+</span></td>
+<td>Subtracts the second operand from the first</td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>number</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>-</span>
+</span></td>
+<td>Decrement the timestamp by the given number of milliseconds</td>
+<td><code v-pre>timestamp</code></td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>timestamp</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>*</span>
+</span></td>
+<td>Multiplies one operand by the other</td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>number</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>*</span>
+</span></td>
+<td>Evaluates to a new string by repeated n times</td>
+<td><code v-pre>string</code></td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>string</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>/</span>
+</span></td>
+<td>Divides the first operand by the second</td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>number</code></td>
+</tr>
+<tr>
+<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>%</span>
+</span></td>
+<td>Divides the first INTEGER operand by the second, and returns the remainder</td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>number</code></td>
+<td><code v-pre>number</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="unary-operators">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#unary-operators">#</doc-anchor-trigger>
@@ -487,7 +607,7 @@ data literals and data references to transform or create new data.</p>
 <td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>find</span>
 </span></td>
-<td>Returns an new list where the right expression evaluates to true for the item</td>
+<td>Evaluates to a new list where the right expression evaluates to true for the item</td>
 <td><code v-pre>list</code></td>
 <td><code v-pre>bool</code></td>
 <td><code v-pre>list</code></td>
@@ -529,31 +649,11 @@ better decision by showing you use-cases in <a href="https://github.com/postmanl
 <tbody>
 <tr>
 <td>sort</td>
-<td>Returns a sorted list</td>
+<td>Evaluates to a sorted list</td>
 </tr>
 <tr>
 <td>groupby</td>
-<td>Returns a record which contains fields that group a particular list</td>
-</tr>
-<tr>
-<td>+</td>
-<td>Sum and Concatenation operators. Can be used to add numbers, concatenate string and list and merge records</td>
-</tr>
-<tr>
-<td>-</td>
-<td>Subtract and Difference operator. Can be used to subtract number, strip string and list, different on records</td>
-</tr>
-<tr>
-<td>*</td>
-<td>Multiplication of numbers</td>
-</tr>
-<tr>
-<td>/</td>
-<td>Division of numbers</td>
-</tr>
-<tr>
-<td>%</td>
-<td>Remainder operator</td>
+<td>Evaluates to a record which contains fields that group a particular list</td>
 </tr>
 <tr>
 <td>^</td>
