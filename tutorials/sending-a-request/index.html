@@ -31,11 +31,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/postman-flows/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/postman-flows/favicon.ico" rel="icon" />
-    <link href="/postman-flows/resources/css/retype.css?v=2.2.703186310865" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/postman-flows/resources/css/retype.css?v=2.2.703186484244" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703186310865" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703186484244" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/postman-flows/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703186310865" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703186484244" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -210,25 +210,27 @@
         <span>1. Add the <a href="../../blocks/send-request/">Send Request</a> block</span>
     </h3>
 </doc-anchor-target>
+<p>Click on the <code v-pre>+ Block</code> button on the toolbar and select a block from the list
+to add to your canvas. Alternatively, you can use the shortcut <code v-pre>A</code> with canvas in
+focus.</p>
 <p><figure class="content-center">
     <img src="../../static/add-block-toolbar.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
-Click on the <code v-pre>+ Block</code> button on the toolbar and select a block from the list
-to add to your canvas. Alternatively, you can use the shortcut <code v-pre>A</code> with canvas in
-focus.</p>
+</p>
 <doc-anchor-target id="2-select-a-request">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#2-select-a-request">#</doc-anchor-trigger>
         <span>2. Select a Request</span>
     </h3>
 </doc-anchor-target>
+<p>Click on the <code v-pre>Add request to send</code> config for the block and select one of the requests present
+in your workspace.</p>
 <p><figure class="content-center">
     <img src="../../static/select-request-in-block.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
-Click on the <code v-pre>Add request to send</code> config for the block and select one of the requests present
-in your workspace.</p>
+</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -270,13 +272,13 @@ but it will become important in the later tutorials.</p>
         <span>3. Select an Environment (optional)</span>
     </h3>
 </doc-anchor-target>
+<p>Usually collections and request have their associated environment variables where secrets or environment specific
+config may be stored. If you have any such environments present select it.</p>
 <p><figure class="content-center">
     <img src="../../static/select-environment-in-block.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<p>Usually collections and request have their associated environment variables where secrets or environment specific
-config may be stored. If you have any such environments present select it.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -307,15 +309,15 @@ have <strong>no effect</strong>.</li>
         <span>4. Start the Flow</span>
     </h3>
 </doc-anchor-target>
-<p><figure class="content-center">
+<p>Finally, click on the <code v-pre>Start</code> button in the toolbar and you will notice that the block starts executing.
+<figure class="content-center">
     <img src="../../static/start-send-request.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
-Finally, click on the <code v-pre>Start</code> button in the toolbar and you will notice that the block starts executing.
 If you have not gone through the <a href="/postman-flows/#fundamentals">Fundaments</a> and <a href="../../getting-started/blocks/">Block Anatomy</a> yet,
 now will be a good time.</p>
 <p>The input is <strong>optional</strong> and there is <em>no connection</em>, therefore the block starts
-running immediately when flow starts. The block header turns blue when it&#x27;s sunning,
+running immediately when flow starts. The block header turns blue when it&#x27;s running,
 and after the block completes running the header becomes green.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>

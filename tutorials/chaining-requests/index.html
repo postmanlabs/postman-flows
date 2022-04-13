@@ -12,30 +12,30 @@
     <!-- Primary Meta Tags -->
     <title>Level 2 - Chaining requests</title>
     <meta name="title" content="Level 2 - Chaining requests">
-    <meta name="description" content="If you simply want to pick some data from a response and pipe that to another request, follow along:" />
+    <meta name="description" content="Chaining request is the ability of send one request after another either in serial or parallel." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.postmanlabs.com/postman-flows/tutorials/chaining-requests/">
     <meta property="og:title" content="Level 2 - Chaining requests">
-    <meta property="og:description" content="If you simply want to pick some data from a response and pipe that to another request, follow along:">
-    <meta property="og:image" content="https://www.postmanlabs.com/postman-flows/static/chaining/add-first-request.gif">
+    <meta property="og:description" content="Chaining request is the ability of send one request after another either in serial or parallel.">
+    <meta property="og:image" content="https://www.postmanlabs.com/postman-flows/static/chaining/add-requests.gif">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.postmanlabs.com/postman-flows/tutorials/chaining-requests/">
     <meta property="twitter:title" content="Level 2 - Chaining requests">
-    <meta property="twitter:description" content="If you simply want to pick some data from a response and pipe that to another request, follow along:">
-    <meta property="twitter:image" content="https://www.postmanlabs.com/postman-flows/static/chaining/add-first-request.gif">
+    <meta property="twitter:description" content="Chaining request is the ability of send one request after another either in serial or parallel.">
+    <meta property="twitter:image" content="https://www.postmanlabs.com/postman-flows/static/chaining/add-requests.gif">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/postman-flows/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/postman-flows/favicon.ico" rel="icon" />
-    <link href="/postman-flows/resources/css/retype.css?v=2.2.703186310865" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/postman-flows/resources/css/retype.css?v=2.2.703186484244" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703186310865" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703186484244" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/postman-flows/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703186310865" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703186484244" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -204,20 +204,91 @@
         <span>Level 2 - Chaining requests</span>
     </h1>
 </doc-anchor-target>
+<p>Chaining request is the ability of send one request after another either in serial or parallel.</p>
 <doc-anchor-target id="simple">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#simple">#</doc-anchor-trigger>
         <span>Simple</span>
     </h2>
 </doc-anchor-target>
-<p>If you simply want to pick some data from a response and pipe that to another request, follow along:</p>
+<p>If you have a bunch of simple requests that have no dependency on each other but
+they have to be executed in a particular order, it&#x27;s as simple as</p>
+<doc-anchor-target id="1-add-the-send-request-blocks">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-add-the-send-request-blocks">#</doc-anchor-trigger>
+        <span>1. Add the <a href="../../blocks/send-request/">Send Request</a> blocks</span>
+    </h3>
+</doc-anchor-target>
+<p>Click on the <code v-pre>+ Block</code> button on the toolbar and select the <a href="../../blocks/send-request/">Send Request</a> from the list to add to your canvas, then select the request. Repeat this
+setup until all the requests are added to the canvas.</p>
+<p><figure class="content-center">
+    <img src="../../static/chaining/add-requests.gif" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="2-connect-the-signals">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-connect-the-signals">#</doc-anchor-trigger>
+        <span>2. Connect the signals</span>
+    </h3>
+</doc-anchor-target>
+<p>Click on the grey dot (signal output) of the source block and connect it to
+signal input of the target block in the order you want the requests to execute.
+<figure class="content-center">
+    <img src="../../static/chaining/connect-signals.gif" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+Here, two <code v-pre>Create a post</code> are executed in parallel. When both of the request has completed,
+the <code v-pre>Get all posts</code> endpoint is called, and then finally <code v-pre>Delete all posts is called</code>.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Important</h5>
+<ol>
+<li>When a signal connection is made the input become disabled to show that it will get enabled
+after the previous blocks get enabled.</li>
+<li>The signal connection depict exactly the order in which the blocks will be executed.</li>
+<li>When using signal no data is passed from one block to another.</li>
+<li>Two or more connections can be made to an input. The block will execute only when all signals
+have got enabled.</li>
+</ol>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="3-start-the-flow">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-start-the-flow">#</doc-anchor-trigger>
+        <span>3. Start the Flow</span>
+    </h3>
+</doc-anchor-target>
+<p>Start the flow see them run in the order they are configured!
+<figure class="content-center">
+    <img src="../../static/chaining/run-with-signals.gif" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="passing-data">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#passing-data">#</doc-anchor-trigger>
+        <span>Passing Data</span>
+    </h2>
+</doc-anchor-target>
 <doc-anchor-target id="1-add-a-send-request-block">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#1-add-a-send-request-block">#</doc-anchor-trigger>
-        <span>1. Add a <code v-pre>Send Request</code> block</span>
+        <span>1 Add a <a href="../../blocks/send-request/">Send Request</a> block</span>
     </h3>
 </doc-anchor-target>
-<p>Add a new <a href="../../blocks/send-request/">send request</a> from the block list to the canvas and select the first request you want to send.
+<p>Click on the <code v-pre>+ Block</code> button on the toolbar and select the <a href="../../blocks/send-request/">Send Request</a> from the list to add to your canvas, then select the request.
 <figure class="content-center">
     <img src="../../static/chaining/add-first-request.gif" alt="" />
     <figcaption class="caption"></figcaption>
@@ -272,12 +343,6 @@ Then in the flow, click on <code v-pre>Add Variables</code>, select the name of 
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<doc-anchor-target id="conditional">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#conditional">#</doc-anchor-trigger>
-        <span>Conditional</span>
-    </h2>
-</doc-anchor-target>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -290,10 +355,16 @@ Then in the flow, click on <code v-pre>Add Variables</code>, select the name of 
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This tutorial is under-construction</p>
+<p>The rest of this tutorial is under-construction</p>
         </div>
     </div>
 </div>
+<doc-anchor-target id="conditional">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#conditional">#</doc-anchor-trigger>
+        <span>Conditional</span>
+    </h2>
+</doc-anchor-target>
 <p>There might be situations where we want to conditionally send the second request.</p>
 <doc-anchor-target id="1-add-an-example-to-the-first-request-important">
     <h3>
