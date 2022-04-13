@@ -15,7 +15,7 @@ Click on the `Add request to send` config for the block and select one of the re
 in your workspace.
 
 !!!success
-Flows can only use requests that have been saved in a collection. So create a collection with a request
+Flows can only use requests that have been saved in a collection. So [create a collection with a request](https://learning.postman.com/docs/getting-started/creating-the-first-collection/)
 if you have not already done that.
 !!!
 
