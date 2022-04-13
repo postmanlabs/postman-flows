@@ -1,40 +1,54 @@
 ---
 icon: home
-label: Welcome
+label: Postman Flows
 ---
-<h1 align="center">Postman Flows</h1>
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/28357106/137292312-42f595d2-4d99-41a6-96c4-0753965c1240.gif">
-</p>
+### A visual programming language for APIs 
+[!embed](https://www.youtube.com/watch?v=4Yr9CG8Pp14)
 
 Postman Flows is an API workflow builder that lets you connect APIs logically. Use Flows to chain requests, handle data and create real world workflows right in your Postman workspace.
 
-Based on the [flow-based programming](https://en.wikipedia.org/wiki/Flow-based_programming) paradigm, a Flow is made up of several connected "Blocks" that each perform an action. Blocks have "Ports" on them that receive and transmit data to and from the block.
-
 Postman Flow is a beta feature and is available to members of all plans **_for free_**. Head on to [Postman web app](https://go.postman.co/) or use the latest version of [Postman desktop app](https://www.postman.com/downloads/     ) to start creating Flows.
 
-## Getting started
+## Fundamentals
+There are just **4 fundamental** concepts that you need to know before starting
+to use flows.
 
-1. ### Open the flow builder
+![](static/concepts.png)
 
-    You can create a new flow by going to the "Flows" tab in the left sidebar
++++ Block
+A *block* is something that the system is capable of doing. In the above example the block is capable of Sending a HTTP request.
 
-    ![Open flow builder](https://user-images.githubusercontent.com/28357106/137294433-e520e8e2-444c-4924-93d0-d8d71c33293c.png)
+To be able to send a request, the block might need some information like variable. Once its firing pattern is met, it starts processing, and gives some information like the response as output.
 
-2. ### Add blocks to the flow builder
+The block is a single black-box process which  when executed figures out how to send a request by itself. Additionally, a flow program can itself be considered as a block.
 
-    When you open a new tab you have the Block list already open from which you can select the block to start with. You can open this Block selector by clicking on any blocks port.
+Note: A block is not a function but a process
++++ Connection
+A connection is a construct by which data from one block can be transferred to another.
 
-    Alternatively you can also add a block by clicking on the "Add block" button in the toolbar
+They can be imagined as FedEx like courier service that transfer mail or information from source to destination.
 
-    ![add block](https://user-images.githubusercontent.com/28357106/137294462-08332279-12c5-4bb1-a85a-effb3fbff590.png)
+Connections do not in any way store data, they just transmit.
++++ Messages
+A Message is a packet of data. More specifically, it is a pointer to a discrete bundle of data which travel together from one block to another.
 
-3. ### Run a flow
+It is also possible to club together multiple pointers using special markers called as brackets, in which case they behave like data streams.
++++ Signal
+A signal is a special kind of connection that does not carry data but a signal which is triggered when a block completes processing.
 
-    Once You've created your flow and are ready to execute it, you can click on the start button on the bottom toolbar. This will trigger the flow to start running.
+All blocks would start executing as soon as their firing pattern has been met. Very often their execution happens in parallel, but there may be requirements to halt the execution of block until other blocks have completed their execution. In such cases the signal can be used to pause execution and synchronize. 
 
-    ![start](https://user-images.githubusercontent.com/28357106/137294485-b1695a67-38c7-4807-b218-58c29c2c212d.png)
+Signal ports also respect stream, so they don’t turn on until the entire stream is processed.
++++
 
+## Getting Started
+* [The Interface](getting-started/interface.md)
+
+## Tutorials
+* [Level 1 - Sending a Request](tutorial/sending-a-request.md)
+* [Level 2 - Chaining Requests](tutorial/chaining-requests.md)
+* [Level 3 - Working with Access Tokens](tutorial/working-with-access-token.md)
+* [Level 4 - Loops & Lists](tutorial/loops.md)
 
 ## Contribute
 
