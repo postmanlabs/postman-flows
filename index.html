@@ -10,31 +10,32 @@
     <meta name="generator" content="Retype 2.2">
 
     <!-- Primary Meta Tags -->
-    <title>Welcome</title>
-    <meta name="title" content="Welcome">
+    <title>Postman Flows</title>
+    <meta name="title" content="Postman Flows">
     <meta name="description" content="Postman Flows is an API workflow builder that lets you connect APIs logically." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.postmanlabs.com/postman-flows/">
-    <meta property="og:title" content="Welcome">
+    <meta property="og:title" content="Postman Flows">
     <meta property="og:description" content="Postman Flows is an API workflow builder that lets you connect APIs logically.">
-    <meta property="og:image" content="https://user-images.githubusercontent.com/28357106/137294433-e520e8e2-444c-4924-93d0-d8d71c33293c.png">
+    <meta property="og:image" content="https://www.postmanlabs.com/postman-flows/static/concepts.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.postmanlabs.com/postman-flows/">
-    <meta property="twitter:title" content="Welcome">
+    <meta property="twitter:title" content="Postman Flows">
     <meta property="twitter:description" content="Postman Flows is an API workflow builder that lets you connect APIs logically.">
-    <meta property="twitter:image" content="https://user-images.githubusercontent.com/28357106/137294433-e520e8e2-444c-4924-93d0-d8d71c33293c.png">
+    <meta property="twitter:image" content="https://www.postmanlabs.com/postman-flows/static/concepts.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/postman-flows/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/postman-flows/resources/css/retype.css?v=2.2.703146459436" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/postman-flows/favicon.ico" rel="icon" />
+    <link href="/postman-flows/resources/css/retype.css?v=2.2.703169353557" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703146459436" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703169353557" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/postman-flows/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703146459436" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703169353557" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -197,55 +198,160 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="welcome" class="break-words">
+<doc-anchor-target id="postman-flows" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#welcome">#</doc-anchor-trigger>
-        <span>Welcome</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#postman-flows">#</doc-anchor-trigger>
+        <span>Postman Flows</span>
     </h1>
 </doc-anchor-target>
-<h1 align="center">Postman Flows</h1>
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/28357106/137292312-42f595d2-4d99-41a6-96c4-0753965c1240.gif">
+<doc-anchor-target id="a-visual-programming-language-for-apis">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#a-visual-programming-language-for-apis">#</doc-anchor-trigger>
+        <span>A visual programming language for APIs</span>
+    </h3>
+</doc-anchor-target>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="https://www.youtube.com/embed/4Yr9CG8Pp14" allowfullscreen></iframe>
+    </div>
+</figure>
 </p>
 <p>Postman Flows is an API workflow builder that lets you connect APIs logically. Use Flows to chain requests, handle data and create real world workflows right in your Postman workspace.</p>
-<p>Based on the <a href="https://en.wikipedia.org/wiki/Flow-based_programming">flow-based programming</a> paradigm, a Flow is made up of several connected &quot;Blocks&quot; that each perform an action. Blocks have &quot;Ports&quot; on them that receive and transmit data to and from the block.</p>
-<p>Postman Flow is a beta feature and is available to members of all plans <strong><em>for free</em></strong>. Head on to <a href="https://go.postman.co/">Postman web app</a> or use the latest version of <a href="https://www.postman.com/downloads/">Postman desktop app</a> to start creating Flows.</p>
+<p>Postman Flow is a beta feature and is available to members of all plans <strong><em>for free</em></strong>.
+Head on to <a href="https://go.postman.co/">Postman web app</a> or use the latest version
+of <a href="https://www.postman.com/downloads/">Postman desktop app</a> to start creating Flows.</p>
+<doc-anchor-target id="fundamentals">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fundamentals">#</doc-anchor-trigger>
+        <span>Fundamentals</span>
+    </h2>
+</doc-anchor-target>
+<p>There are just <strong>4 fundamental</strong> concepts that you need to know before starting
+to use flows.</p>
+<p><figure class="content-center">
+    <img src="static/concepts.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-tabs>
+<doc-tab id="block">
+<template #title>Block</template>
+<p>A <strong>Block</strong> is the basic unit of flows. There are various kind of blocks,
+some <em>create data</em>, some <em>process data</em> and some <em>visualize data</em>.
+In the above example you can see three blocks which are capable of Sending a HTTP request.</p>
+<p>To be able to send a request, the block might need some <strong>input</strong> like variable
+and it might generate some <strong>output</strong> like the response. Every block is different but fundamentally
+it is a black-box process which takes in some input messages,executes and then generates output messages.</p>
+<p>Additionally, a flow in itself can be considered as a block.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Important</h5>
+<ol>
+<li>A block to executable when all of it&#x27;s <strong>required</strong> inputs are connected.</li>
+<li>A block starts running when a message packet becomes available in all of its connected inputs.</li>
+<li>A block is not a function but a process</li>
+</ol>
+        </div>
+    </div>
+</div>
+</doc-tab>
+<doc-tab id="messages">
+<template #title>Messages</template>
+<p>A <strong>Message</strong> is a single packet of data. A message could be a simple string or number, or it could be a
+large complex data structure like an List of users, or maybe an entire Movie.</p>
+<p>Data structures like Lists can also be converted to Streams which can be processed by blocks asynchronously.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-500 dark:bg-dark-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-500 dark:text-dark-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Geek&#x27;s Note</h5>
+<p>When message flow from one block another, the actual data does not move but a pointer to the message is passed along.</p>
+        </div>
+    </div>
+</div>
+</doc-tab>
+<doc-tab id="connection">
+<template #title>Connection</template>
+<p>A <strong>Connection</strong> is a data pipe which can be used to transfer messages from output of one block to the
+input of another. Imagined them as FedEx like courier service that transfer mails and parcels between addresses.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Important</h5>
+<ol>
+<li>Connections don&#x27;t store data, they just transmit.</li>
+<li>Message can&#x27;t be transmitted to an input if it already has a message. Messages wait in the
+output until the receivers completes processing the existing message.</li>
+<li>When two connections are connected to the output, then a message is duplicated and sent
+to both connections.</li>
+<li>When two connections are connected to the input and both have messages, they don&#x27;t get merged, the block processes
+each message in a round-robbin fashion.</li>
+</ol>
+        </div>
+    </div>
+</div>
+</doc-tab>
+<doc-tab id="signal-advanced">
+<template #title>Signal (advanced)</template>
+<p>A <strong>Signal</strong> is a special kind of connection that does not carry data but a signal which is triggered when a block completes processing.</p>
+<p>Very often execution happens in parallel, but there may be requirements to halt the execution of block until other blocks have completed their execution.
+In such cases the signal can be used to pause execution and synchronize.</p>
+<p>Signal ports also understand stream, so they don’t turn on until the entire stream has been processed.</p>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="getting-started">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#getting-started">#</doc-anchor-trigger>
-        <span>Getting started</span>
+        <span>Getting Started</span>
     </h2>
 </doc-anchor-target>
-<ol>
-<li><doc-anchor-target id="open-the-flow-builder">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#open-the-flow-builder">#</doc-anchor-trigger>
-        <span>Open the flow builder</span>
-    </h3>
+<ul>
+<li><a href="getting-started/interface/">The Interface</a></li>
+<li><a href="getting-started/blocks/">The Block Anatomy</a></li>
+<li><a href="getting-started/data-types/">Data Types</a></li>
+<li><a href="getting-started/operators/">Expressions &amp; Operators</a></li>
+</ul>
+<doc-anchor-target id="tutorials">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tutorials">#</doc-anchor-trigger>
+        <span>Tutorials</span>
+    </h2>
 </doc-anchor-target>
-<p>You can create a new flow by going to the &quot;Flows&quot; tab in the left sidebar</p>
-<p><img src="https://user-images.githubusercontent.com/28357106/137294433-e520e8e2-444c-4924-93d0-d8d71c33293c.png" alt="Open flow builder" /></p>
-</li>
-<li><doc-anchor-target id="add-blocks-to-the-flow-builder">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#add-blocks-to-the-flow-builder">#</doc-anchor-trigger>
-        <span>Add blocks to the flow builder</span>
-    </h3>
-</doc-anchor-target>
-<p>When you open a new tab you have the Block list already open from which you can select the block to start with. You can open this Block selector by clicking on any blocks port.</p>
-<p>Alternatively you can also add a block by clicking on the &quot;Add block&quot; button in the toolbar</p>
-<p><img src="https://user-images.githubusercontent.com/28357106/137294462-08332279-12c5-4bb1-a85a-effb3fbff590.png" alt="add block" /></p>
-</li>
-<li><doc-anchor-target id="run-a-flow">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#run-a-flow">#</doc-anchor-trigger>
-        <span>Run a flow</span>
-    </h3>
-</doc-anchor-target>
-<p>Once You&#x27;ve created your flow and are ready to execute it, you can click on the start button on the bottom toolbar. This will trigger the flow to start running.</p>
-<p><img src="https://user-images.githubusercontent.com/28357106/137294485-b1695a67-38c7-4807-b218-58c29c2c212d.png" alt="start" /></p>
-</li>
-</ol>
+<ul>
+<li><a href="tutorials/sending-a-request/">Level 1 - Sending a Request</a></li>
+<li><a href="tutorials/chaining-requests/">Level 2 - Chaining Requests</a></li>
+<li><a href="tutorials/working-with-access-token/">Level 3 - Working with Access Tokens</a></li>
+<li><a href="tutorials/loops/">Level 4 - Loops &amp; Lists</a></li>
+</ul>
 <doc-anchor-target id="contribute">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#contribute">#</doc-anchor-trigger>
@@ -272,10 +378,10 @@
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/postman-flows/blocks/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/postman-flows/getting-started/interface/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Blocks</span>
+                                                <span class="block mt-1">The Interface</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -319,6 +425,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Welcome", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Postman Flows", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
