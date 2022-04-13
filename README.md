@@ -7,7 +7,9 @@ label: Postman Flows
 
 Postman Flows is an API workflow builder that lets you connect APIs logically. Use Flows to chain requests, handle data and create real world workflows right in your Postman workspace.
 
-Postman Flow is a beta feature and is available to members of all plans **_for free_**. Head on to [Postman web app](https://go.postman.co/) or use the latest version of [Postman desktop app](https://www.postman.com/downloads/     ) to start creating Flows.
+Postman Flow is a beta feature and is available to members of all plans **_for free_**. 
+Head on to [Postman web app](https://go.postman.co/) or use the latest version 
+of [Postman desktop app](https://www.postman.com/downloads/) to start creating Flows.
 
 ## Fundamentals
 There are just **4 fundamental** concepts that you need to know before starting
@@ -16,39 +18,66 @@ to use flows.
 ![](static/concepts.png)
 
 +++ Block
-A *block* is something that the system is capable of doing. In the above example the block is capable of Sending a HTTP request.
+A **Block** is the basic unit of flows. There are various kind of blocks,
+some *create data*, some *process data* and some *visualize data*. 
+In the above example you can see three blocks which are capable of Sending a HTTP request.
 
-To be able to send a request, the block might need some information like variable. Once its firing pattern is met, it starts processing, and gives some information like the response as output.
+To be able to send a request, the block might need some **input** like variable
+and it might generate some **output** like the response. Every block is different but fundamentally 
+it is a black-box process which takes in some input messages,executes and then generates output messages.
 
-The block is a single black-box process which  when executed figures out how to send a request by itself. Additionally, a flow program can itself be considered as a block.
+Additionally, a flow in itself can be considered as a block.
 
-Note: A block is not a function but a process
-+++ Connection
-A connection is a construct by which data from one block can be transferred to another.
+!!!success Important
+1. A block to executable when all of it's **required** inputs are connected.
+2. A block starts running when a message packet becomes available in all of its connected inputs.
+3. A block is not a function but a process
+!!!
 
-They can be imagined as FedEx like courier service that transfer mail or information from source to destination.
-
-Connections do not in any way store data, they just transmit.
 +++ Messages
-A Message is a packet of data. More specifically, it is a pointer to a discrete bundle of data which travel together from one block to another.
+A **Message** is a single packet of data. A message could be a simple string or number, or it could be a
+large complex data structure like an List of users, or maybe an entire Movie.
 
-It is also possible to club together multiple pointers using special markers called as brackets, in which case they behave like data streams.
-+++ Signal
-A signal is a special kind of connection that does not carry data but a signal which is triggered when a block completes processing.
+Data structures like Lists can also be converted to Streams which can be processed by blocks asynchronously.
 
-All blocks would start executing as soon as their firing pattern has been met. Very often their execution happens in parallel, but there may be requirements to halt the execution of block until other blocks have completed their execution. In such cases the signal can be used to pause execution and synchronize. 
+!!!secondary Geek's Note
+When message flow from one block another, the actual data does not move but a pointer to the message is passed along.
+!!!
 
-Signal ports also respect stream, so they don’t turn on until the entire stream is processed.
++++ Connection
+A **Connection** is a data pipe which can be used to transfer messages from output of one block to the
+input of another. Imagined them as FedEx like courier service that transfer mails and parcels between addresses.
+
+!!!success Important
+1. Connections don't store data, they just transmit.
+2. Message can't be transmitted to an input if it already has a message. Messages wait in the
+  output until the receivers completes processing the existing message.
+3. When two connections are connected to the output, then a message is duplicated and sent
+  to both connections.
+4. When two connections are connected to the input and both have messages, they don't get merged, the block processes
+  each message in a round-robbin fashion.
+!!!
+
++++ Signal (advanced)
+A **Signal** is a special kind of connection that does not carry data but a signal which is triggered when a block completes processing.
+
+Very often execution happens in parallel, but there may be requirements to halt the execution of block until other blocks have completed their execution. 
+In such cases the signal can be used to pause execution and synchronize. 
+
+Signal ports also understand stream, so they don’t turn on until the entire stream has been processed.
 +++
 
 ## Getting Started
 * [The Interface](getting-started/interface.md)
+* [The Block Anatomy](getting-started/blocks.md)
+* [Data Types](getting-started/data-types.md)
+* [Expressions & Operators](getting-started/operators.md)
 
 ## Tutorials
-* [Level 1 - Sending a Request](tutorial/sending-a-request.md)
-* [Level 2 - Chaining Requests](tutorial/chaining-requests.md)
-* [Level 3 - Working with Access Tokens](tutorial/working-with-access-token.md)
-* [Level 4 - Loops & Lists](tutorial/loops.md)
+* [Level 1 - Sending a Request](tutorials/sending-a-request.md)
+* [Level 2 - Chaining Requests](tutorials/chaining-requests.md)
+* [Level 3 - Working with Access Tokens](tutorials/working-with-access-token.md)
+* [Level 4 - Loops & Lists](tutorials/loops.md)
 
 ## Contribute
 
