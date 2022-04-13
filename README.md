@@ -1,40 +1,83 @@
 ---
 icon: home
-label: Welcome
+label: Postman Flows
 ---
-<h1 align="center">Postman Flows</h1>
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/28357106/137292312-42f595d2-4d99-41a6-96c4-0753965c1240.gif">
-</p>
+### A visual programming language for APIs 
+[!embed](https://www.youtube.com/watch?v=4Yr9CG8Pp14)
 
 Postman Flows is an API workflow builder that lets you connect APIs logically. Use Flows to chain requests, handle data and create real world workflows right in your Postman workspace.
 
-Based on the [flow-based programming](https://en.wikipedia.org/wiki/Flow-based_programming) paradigm, a Flow is made up of several connected "Blocks" that each perform an action. Blocks have "Ports" on them that receive and transmit data to and from the block.
+Postman Flow is a beta feature and is available to members of all plans **_for free_**. 
+Head on to [Postman web app](https://go.postman.co/) or use the latest version 
+of [Postman desktop app](https://www.postman.com/downloads/) to start creating Flows.
 
-Postman Flow is a beta feature and is available to members of all plans **_for free_**. Head on to [Postman web app](https://go.postman.co/) or use the latest version of [Postman desktop app](https://www.postman.com/downloads/     ) to start creating Flows.
+## Fundamentals
+There are just **4 fundamental** concepts that you need to know before starting
+to use flows.
 
-## Getting started
+![](static/concepts.png)
 
-1. ### Open the flow builder
++++ Block
+A **Block** is the basic unit of flows. There are various kind of blocks,
+some *create data*, some *process data* and some *visualize data*. 
+In the above example you can see three blocks which are capable of Sending a HTTP request.
 
-    You can create a new flow by going to the "Flows" tab in the left sidebar
+To be able to send a request, the block might need some **input** like variable
+and it might generate some **output** like the response. Every block is different but fundamentally 
+it is a black-box process which takes in some input messages,executes and then generates output messages.
 
-    ![Open flow builder](https://user-images.githubusercontent.com/28357106/137294433-e520e8e2-444c-4924-93d0-d8d71c33293c.png)
+Additionally, a flow in itself can be considered as a block.
 
-2. ### Add blocks to the flow builder
+!!!success Important
+1. A block to executable when all of it's **required** inputs are connected.
+2. A block starts running when a message packet becomes available in all of its connected inputs.
+3. A block is not a function but a process
+!!!
 
-    When you open a new tab you have the Block list already open from which you can select the block to start with. You can open this Block selector by clicking on any blocks port.
++++ Messages
+A **Message** is a single packet of data. A message could be a simple string or number, or it could be a
+large complex data structure like an List of users, or maybe an entire Movie.
 
-    Alternatively you can also add a block by clicking on the "Add block" button in the toolbar
+Data structures like Lists can also be converted to Streams which can be processed by blocks asynchronously.
 
-    ![add block](https://user-images.githubusercontent.com/28357106/137294462-08332279-12c5-4bb1-a85a-effb3fbff590.png)
+!!!secondary Geek's Note
+When message flow from one block another, the actual data does not move but a pointer to the message is passed along.
+!!!
 
-3. ### Run a flow
++++ Connection
+A **Connection** is a data pipe which can be used to transfer messages from output of one block to the
+input of another. Imagined them as FedEx like courier service that transfer mails and parcels between addresses.
 
-    Once You've created your flow and are ready to execute it, you can click on the start button on the bottom toolbar. This will trigger the flow to start running.
+!!!success Important
+1. Connections don't store data, they just transmit.
+2. Message can't be transmitted to an input if it already has a message. Messages wait in the
+  output until the receivers completes processing the existing message.
+3. When two connections are connected to the output, then a message is duplicated and sent
+  to both connections.
+4. When two connections are connected to the input and both have messages, they don't get merged, the block processes
+  each message in a round-robbin fashion.
+!!!
 
-    ![start](https://user-images.githubusercontent.com/28357106/137294485-b1695a67-38c7-4807-b218-58c29c2c212d.png)
++++ Signal (advanced)
+A **Signal** is a special kind of connection that does not carry data but a signal which is triggered when a block completes processing.
 
+Very often execution happens in parallel, but there may be requirements to halt the execution of block until other blocks have completed their execution. 
+In such cases the signal can be used to pause execution and synchronize. 
+
+Signal ports also understand stream, so they don’t turn on until the entire stream has been processed.
++++
+
+## Getting Started
+* [The Interface](getting-started/interface.md)
+* [The Block Anatomy](getting-started/blocks.md)
+* [Data Types](getting-started/data-types.md)
+* [Expressions & Operators](getting-started/operators.md)
+
+## Tutorials
+* [Level 1 - Sending a Request](tutorials/sending-a-request.md)
+* [Level 2 - Chaining Requests](tutorials/chaining-requests.md)
+* [Level 3 - Working with Access Tokens](tutorials/working-with-access-token.md)
+* [Level 4 - Loops & Lists](tutorials/loops.md)
 
 ## Contribute
 
