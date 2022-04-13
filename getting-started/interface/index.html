@@ -31,11 +31,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/postman-flows/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/postman-flows/favicon.ico" rel="icon" />
-    <link href="/postman-flows/resources/css/retype.css?v=2.2.703169353557" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/postman-flows/resources/css/retype.css?v=2.2.703186310865" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703169353557" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703186310865" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/postman-flows/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703169353557" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703186310865" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -219,37 +219,40 @@
 <doc-tabs>
 <doc-tab id="zoom-controls">
 <template #title>Zoom controls</template>
-<p><figure class="content-center">
+<p>Use the toolbar to zoom in or out the canvas. Fit-to-view adjusts the zoom level to fit your entire flow on the visible canvas.</p>
+<p>You can also hold down <code v-pre>ctrl</code>/<code v-pre>cmd</code> scroll to zoom in or out
+<figure class="content-center">
     <img src="../../static/zoom-controls.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
-Use the toolbar to zoom in or out the canvas. Fit-to-view adjusts the zoom level to fit your entire flow on the visible canvas.</p>
-<p>You can also hold down <code v-pre>ctrl</code>/<code v-pre>cmd</code> scroll to zoom in or out</p>
+</p>
 </doc-tab>
 <doc-tab id="start">
 <template #title>Start</template>
-<p><figure class="content-center">
+<p>Use the start button to execute the flow you&#x27;ve built on the canvas. the start button changes to stop during an active run, which can be used to, well, stop the flow.
+<figure class="content-center">
     <img src="../../static/start-flow.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<p>Use the start button to execute the flow you&#x27;ve built on the canvas. the start button changes to stop during an active run, which can be used to, well, stop the flow.</p>
 </doc-tab>
-<doc-tab id="block">
-<template #title>+ Block</template>
-<p><figure class="content-center">
+<doc-tab id="add-block">
+<template #title>Add Block</template>
+<p>The tool bar lets you add a block to the canvas as well. Click on the <code v-pre>+ Block</code> button and you&#x27;re presented with a list of the available blocks
+<figure class="content-center">
     <img src="../../static/add-block.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
-The tool bar lets you add a block to the canvas as well. Click on the <code v-pre>+ Block</code> button and you&#x27;re presented with a list of the available blocks</p>
+</p>
 </doc-tab>
 <doc-tab id="text">
 <template #title>Text</template>
-<p><figure class="content-center">
+<p>You can add rich markdown on the canvas to describe what your flow is doing. Just click on the <code v-pre>T</code> or Text icon on the toolbar and place the text block on the canvas.
+<figure class="content-center">
     <img src="../../static/add-annotations.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
-You can add rich markdown on the canvas to describe what your flow is doing. Just click on the <code v-pre>T</code> or Text icon on the toolbar and place the text block on the canvas.</p>
+</p>
 </doc-tab>
 </doc-tabs>
 <doc-anchor-target id="context-bar">
@@ -262,19 +265,36 @@ You can add rich markdown on the canvas to describe what your flow is doing. Jus
 <doc-tabs>
 <doc-tab id="terminal">
 <template #title>Terminal</template>
-<p><figure class="content-center">
-    <img src="../../static/terminal.png" alt="" />
+<p>If you have connected the <a href="../../blocks/terminal/">terminal block</a> to any output, you&#x27;ll see the output being logged in the Terminal section of the context bar.
+You can specify a group for the terminal and view that specific group from the context bar too.
+<figure class="content-center">
+    <img src="../static/terminal.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
 </doc-tab>
 <doc-tab id="test-summary">
 <template #title>Test Summary</template>
-<p><figure class="content-center">
-    <img src="../../static/test-summary.png" alt="" />
+<p>Similar to the terminal, you can connect the &quot;Test&quot; port of a &quot;<a href="../../blocks/send-request/">Send request&quot;</a> block to a <a href="../../blocks/test-summary/">Test summary</a> block and see the test results in the context panel.
+Test summary also supports groups like the Terminal.
+<figure class="content-center">
+    <img src="../static/test-summary.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
+</doc-tab>
+<doc-tab id="execution-errors">
+<template #title>Execution errors</template>
+<p>When your flow encounters an error while running, you can read the logs in the context bar&#x27;s &quot;Execution error&quot; section
+<figure class="content-center">
+    <img src="../static/execution-error.gif" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+</doc-tab>
+<doc-tab id="flow-information">
+<template #title>Flow Information</template>
+<p>You can see the flow ID and add a summary for your flow in the &quot;Info&quot; section</p>
 </doc-tab>
 </doc-tabs>
 
