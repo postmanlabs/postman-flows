@@ -4,6 +4,9 @@ url: www.postmanlabs.com/postman-flows/
 branding:
   title: Postman Flows
   logo: /static/flow-logo.svg
+integrations:
+  plausible:
+    domain: postmanlabs.com
 edit:
   repo: https://github.com/postmanlabs/postman-flows
 links:
