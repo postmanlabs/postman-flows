@@ -28,11 +28,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/postman-flows/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/postman-flows/favicon.ico" rel="icon" />
-    <link href="/postman-flows/resources/css/retype.css?v=2.2.703243793449" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/postman-flows/resources/css/retype.css?v=2.2.703244981626" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703243793449" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703244981626" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/postman-flows/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703243793449" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703244981626" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -48,8 +48,12 @@
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="/postman-flows/" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="/postman-flows/static/flow-logo.svg">
+                                <img class="max-h-10 hidden dark:inline-block" src="/postman-flows/static/flow-logo.svg">
+                            </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Postman Flows</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                        </a>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
