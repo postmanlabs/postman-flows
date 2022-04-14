@@ -3,7 +3,7 @@ output: .retype
 url: www.postmanlabs.com/postman-flows/
 branding:
   title: Postman Flows
-  label: Docs
+  logo: /static/flow-logo.svg
 edit:
   repo: https://github.com/postmanlabs/postman-flows
 links:
