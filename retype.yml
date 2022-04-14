@@ -4,6 +4,8 @@ url: www.postmanlabs.com/postman-flows/
 branding:
   title: Postman Flows
   label: Docs
+edit:
+  repo: https://github.com/postmanlabs/postman-flows
 links:
 - text: Home
   link: /README.md
