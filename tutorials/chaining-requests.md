@@ -35,29 +35,70 @@ the `Get all posts` endpoint is called, and then finally `Delete all posts is ca
 Start the flow see them run in the order they are configured!
 ![](../static/chaining/run-with-signals.gif)
 
+
 ## Passing Data
+A very common use-case of chaining requests is the ability to pass data from one block to another.
+Let's consider an example where want to create a post and then want to use the id of that post in the
+next request to update it.
 
-### 1 Add a [Send Request](./../blocks/send-request.md) block
-Click on the `+ Block` button on the toolbar and select the [Send Request](./../blocks/send-request.md) from the list to add to your canvas, then select the request.
-![](../static/chaining/add-first-request.gif)
+### 1. Add two [Send Request](./../blocks/send-request.md) blocks
+Add two [Send Request](./../blocks/send-request.md) blocks by clicking on the `+ Block`
+button on the toolbar. Select the `Create a Post` for the first request and `Update Post` request for the second.
+![](../static/chaining/add-two-requests.gif)
 
-### 2 Add another `Send Request` block 
-Add another `Send request` block and add the request you want to send the data to here 
-![](../static/chaining/add-second-request.gif)
-
-### 3. Pipe the data
-Now we need to tell the flow where the data should _flow_. To do that, COnnect the `response` output of the first block to the `variables`input of the second block.
+### 3. Pipe the message from output to input
+Now we need to tell the flow how the message should _flow_. To do that, connect the `response` output of the first block to the `variables`input of the second block.
 ![](../static/chaining/pipe-data.gif)
 
-### 4. Use the variables
-To tell the request what to use from the input received, you use variables. Create a template variable in the request where you want the data to fit in. 
-Then in the flow, click on `Add Variables`, select the name of the variable and assign it data comming in from the input port `Variables`.
-![](../static/chaining/use-variables.gif)
+!!!success
+1. On flow execution, the output message from the source block is passed over 
+   to the input of the target block using the pipe connection.
+
+2. When using pipes to connect blocks, signal connections are **optional**. Flows
+   automatically decides the order in which the blocks should execute based on 
+   connections. (Signal can be used explicitly to manually override the order of
+   execution)
+!!!
+
+### 4. Check the output in the terminal
+At this point we don't really know what the output of the `Send Request` looks like.
+So let's add the [Terminal](../blocks/terminal.md) block to see the output.
+![](../static/chaining/check-in-terminal.gif)
+
+The output has the following structure and the `id` is present in the body.
+```yaml
+body:
+   id: 1
+headers:
+   ...
+http:
+   statusCode: 200
+   statusMessage: OK
+   responseTime: 1900
+```
+
+### 4. Use message in Request variables
+For the sake of simplicity, Flows flattens complex object to a simple
+key-value pairs in the Send Request block. So the above message get's converted to
+the following, and you will be able to use in your requests.
+```yaml
+body.id: 1
+headers.content-type: application/json
+...
+http.statusCode: 200
+http.statusMessage: OK
+http.responseTime: 1900
+```
+![](../static/chaining/set-variable.gif)
 
 ### 5. Start the Flow
 Start the flow and the data will _flow_ through!
 ![](../static/chaining/start-flow.gif)
 
+You can observe that the request sent has the path param set to `1` which we
+obtained from the `body.id`
+
+---
 
 !!!warning
 The rest of this tutorial is under-construction
