@@ -31,11 +31,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/postman-flows/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/postman-flows/favicon.ico" rel="icon" />
-    <link href="/postman-flows/resources/css/retype.css?v=2.2.703186484244" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/postman-flows/resources/css/retype.css?v=2.2.703238590477" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703186484244" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/postman-flows/resources/js/config.js?v=2.2.703238590477" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/postman-flows/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703186484244" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/postman-flows/resources/js/lunr.js?v=2.2.703238590477" defer></script>
+    <script id="prism-js" type="text/javascript" src="/postman-flows/resources/js/prism.js?v=2.2.703238590477" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -282,52 +283,102 @@ have got enabled.</li>
         <span>Passing Data</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="1-add-a-send-request-block">
+<p>A very common use-case of chaining requests is the ability to pass data from one block to another.
+Let&#x27;s consider an example where want to create a post and then want to use the id of that post in the
+next request to update it.</p>
+<doc-anchor-target id="1-add-two-send-request-blocks">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-add-a-send-request-block">#</doc-anchor-trigger>
-        <span>1 Add a <a href="../../blocks/send-request/">Send Request</a> block</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-add-two-send-request-blocks">#</doc-anchor-trigger>
+        <span>1. Add two <a href="../../blocks/send-request/">Send Request</a> blocks</span>
     </h3>
 </doc-anchor-target>
-<p>Click on the <code v-pre>+ Block</code> button on the toolbar and select the <a href="../../blocks/send-request/">Send Request</a> from the list to add to your canvas, then select the request.
+<p>Add two <a href="../../blocks/send-request/">Send Request</a> blocks by clicking on the <code v-pre>+ Block</code>
+button on the toolbar. Select the <code v-pre>Create a Post</code> for the first request and <code v-pre>Update Post</code> request for the second.
 <figure class="content-center">
-    <img src="../../static/chaining/add-first-request.gif" alt="" />
+    <img src="../../static/chaining/add-two-requests.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<doc-anchor-target id="2-add-another-send-request-block">
+<doc-anchor-target id="3-pipe-the-message-from-output-to-input">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-add-another-send-request-block">#</doc-anchor-trigger>
-        <span>2 Add another <code v-pre>Send Request</code> block</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-pipe-the-message-from-output-to-input">#</doc-anchor-trigger>
+        <span>3. Pipe the message from output to input</span>
     </h3>
 </doc-anchor-target>
-<p>Add another <code v-pre>Send request</code> block and add the request you want to send the data to here
-<figure class="content-center">
-    <img src="../../static/chaining/add-second-request.gif" alt="" />
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<doc-anchor-target id="3-pipe-the-data">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-pipe-the-data">#</doc-anchor-trigger>
-        <span>3. Pipe the data</span>
-    </h3>
-</doc-anchor-target>
-<p>Now we need to tell the flow where the data should <em>flow</em>. To do that, COnnect the <code v-pre>response</code> output of the first block to the <code v-pre>variables</code>input of the second block.
+<p>Now we need to tell the flow how the message should <em>flow</em>. To do that, connect the <code v-pre>response</code> output of the first block to the <code v-pre>variables</code>input of the second block.
 <figure class="content-center">
     <img src="../../static/chaining/pipe-data.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<doc-anchor-target id="4-use-the-variables">
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<ol>
+<li><p>On flow execution, the output message from the source block is passed over
+to the input of the target block using the pipe connection.</p>
+</li>
+<li><p>When using pipes to connect blocks, signal connections are <strong>optional</strong>. Flows
+automatically decides the order in which the blocks should execute based on
+connections. (Signal can be used explicitly to manually override the order of
+execution)</p>
+</li>
+</ol>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="4-check-the-output-in-the-terminal">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-use-the-variables">#</doc-anchor-trigger>
-        <span>4. Use the variables</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-check-the-output-in-the-terminal">#</doc-anchor-trigger>
+        <span>4. Check the output in the terminal</span>
     </h3>
 </doc-anchor-target>
-<p>To tell the request what to use from the input received, you use variables. Create a template variable in the request where you want the data to fit in.
-Then in the flow, click on <code v-pre>Add Variables</code>, select the name of the variable and assign it data comming in from the input port <code v-pre>Variables</code>.
+<p>At this point we don&#x27;t really know what the output of the <code v-pre>Send Request</code> looks like.
+So let&#x27;s add the <a href="../../blocks/terminal/">Terminal</a> block to see the output.
 <figure class="content-center">
-    <img src="../../static/chaining/use-variables.gif" alt="" />
+    <img src="../../static/chaining/check-in-terminal.gif" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>The output has the following structure and the <code v-pre>id</code> is present in the body.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">body:
+   id: 1
+headers:
+   ...
+http:
+   statusCode: 200
+   statusMessage: OK
+   responseTime: 1900</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="4-use-message-in-request-variables">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-use-message-in-request-variables">#</doc-anchor-trigger>
+        <span>4. Use message in Request variables</span>
+    </h3>
+</doc-anchor-target>
+<p>For the sake of simplicity, Flows flattens complex object to a simple
+key-value pairs in the Send Request block. So the above message get&#x27;s converted to
+the following, and you will be able to use in your requests.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">body.id: 1
+headers.content-type: application/json
+...
+http.statusCode: 200
+http.statusMessage: OK
+http.responseTime: 1900</code></pre>
+</doc-codeblock></div>
+<p><figure class="content-center">
+    <img src="../../static/chaining/set-variable.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
@@ -343,6 +394,9 @@ Then in the flow, click on <code v-pre>Add Variables</code>, select the name of 
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
+<p>You can observe that the request sent has the path param set to <code v-pre>1</code> which we
+obtained from the <code v-pre>body.id</code></p>
+<hr />
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -462,6 +516,6 @@ Then in the flow, click on <code v-pre>Add Variables</code>, select the name of 
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Level 2 - Chaining requests", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Level 2 - Chaining requests", icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
