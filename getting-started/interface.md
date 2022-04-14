@@ -33,14 +33,14 @@ The context bar is the place where you'll see more information about your flow a
 +++ Terminal
 If you have connected the [terminal block](../blocks/terminal.md) to any output, you'll see the output being logged in the Terminal section of the context bar. 
 You can specify a group for the terminal and view that specific group from the context bar too.
-![](../static/terminal.gif)
+![](../static/terminal.png)
 +++ Test Summary
 Similar to the terminal, you can connect the "Test" port of a "[Send request"](../blocks/send-request.md) block to a [Test summary](../blocks/test-summary.md) block and see the test results in the context panel. 
 Test summary also supports groups like the Terminal.
-![](../static/test-summary.gif)
-+++ Execution errors
+![](../static/test-summary.png)
++++ Execution Errors
 When your flow encounters an error while running, you can read the logs in the context bar's "Execution error" section
-![](../static/execution-error.gif)
+![](../static/execution-error.png)
 +++ Flow Information
 You can see the flow ID and add a summary for your flow in the "Info" section
 +++
