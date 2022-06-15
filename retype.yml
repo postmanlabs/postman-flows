@@ -3,10 +3,7 @@ output: .retype
 url: www.postmanlabs.com/postman-flows/
 branding:
   title: Postman Flows
-  logo: /static/flow-logo.svg
-integrations:
-  plausible:
-    domain: postmanlabs.com
+  logo: /static/Flow-logo.svg
 edit:
   repo: https://github.com/postmanlabs/postman-flows
 links:
@@ -23,7 +20,5 @@ links:
   link: https://github.com/postmanlabs/postman-flows
   icon: mark-github
 
-edit:
-  repo: https://github.com/postmanlabs/postman-flows
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
