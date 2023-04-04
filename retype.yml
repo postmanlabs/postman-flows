@@ -1,24 +1,3 @@
 input: .
 output: .retype
 url: www.postmanlabs.com/postman-flows/
-branding:
-  title: Postman Flows
-  logo: /static/Flow-logo.svg
-edit:
-  repo: https://github.com/postmanlabs/postman-flows
-links:
-- text: Home
-  link: /README.md
-  icon: home
-
-- text: Discussions
-  link: https://github.com/postmanlabs/postman-flows/discussions
-  icon: comment-discussion
-  target: blank
-
-- text: Github
-  link: https://github.com/postmanlabs/postman-flows
-  icon: mark-github
-
-footer:
-  copyright: "&copy; Copyright {{ year }}. All rights reserved."
